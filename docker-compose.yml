@@ -1,0 +1,43 @@
+services:
+  datasec-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - DATABASE_URL=postgresql://meli:meli2025@postgres:5432/datasec_challenge
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./chroma_data:/app/chroma_db
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=datasec_challenge
+      - POSTGRES_USER=meli
+      - POSTGRES_PASSWORD=meli2025
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  streamlit-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://datasec-api:8000
+    depends_on:
+      - datasec-api
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

@@ -1,0 +1,181 @@
+{
+  "source": "DBIR 2025 PDF Report",
+  "extraction_date": "2025-01-19",
+  "pdf_path": "data/mitre-attack/2025-dbir-data-breach-investigations-report.pdf",
+  "attack_patterns": [
+    {
+      "id": "dbir_web_app",
+      "name": "Web Application Attacks",
+      "description": "Attacks targeting web applications including injection attacks, authentication bypass, and application-layer vulnerabilities",
+      "frequency": 0.66,
+      "attack_vector": "Web Application",
+      "severity": "High",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "automated_pdf_parsing",
+      "mitre_techniques": [
+        "T1190",
+        "T1505.003",
+        "T1078"
+      ],
+      "detection_methods": [
+        "Web application firewall monitoring",
+        "Application security scanning",
+        "Input validation monitoring",
+        "Authentication log analysis"
+      ],
+      "affected_systems": [
+        "Web applications",
+        "API endpoints",
+        "Application servers"
+      ]
+    },
+    {
+      "id": "dbir_system_intrusion",
+      "name": "System Intrusion",
+      "description": "Unauthorized access to systems through various attack vectors including malware, credential theft, and privilege escalation",
+      "frequency": 0.8,
+      "attack_vector": "Network/System",
+      "severity": "Critical",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "automated_pdf_parsing",
+      "mitre_techniques": [
+        "T1078",
+        "T1021",
+        "T1055",
+        "T1484"
+      ],
+      "detection_methods": [
+        "Network traffic monitoring",
+        "Endpoint detection and response",
+        "Privilege escalation detection",
+        "Lateral movement monitoring"
+      ],
+      "affected_systems": [
+        "Servers",
+        "Workstations",
+        "Network infrastructure"
+      ]
+    },
+    {
+      "id": "dbir_social_engineering",
+      "name": "Social Engineering",
+      "description": "Human-targeted attacks including phishing, pretexting, and other manipulation techniques to gain unauthorized access",
+      "frequency": 0.96,
+      "attack_vector": "Human",
+      "severity": "High",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "automated_pdf_parsing",
+      "mitre_techniques": [
+        "T1566",
+        "T1078",
+        "T1204"
+      ],
+      "detection_methods": [
+        "Email security monitoring",
+        "User behavior analytics",
+        "Security awareness metrics",
+        "Suspicious link detection"
+      ],
+      "affected_systems": [
+        "Email systems",
+        "User accounts",
+        "Authentication systems"
+      ]
+    },
+    {
+      "id": "dbir_malware",
+      "name": "Malware",
+      "description": "Security incidents related to malware",
+      "frequency": 0.42,
+      "attack_vector": "Various",
+      "severity": "Medium",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "keyword_based_extraction",
+      "mitre_techniques": [],
+      "detection_methods": [
+        "General security monitoring",
+        "Log analysis"
+      ],
+      "affected_systems": [
+        "Various systems"
+      ]
+    },
+    {
+      "id": "dbir_ransomware",
+      "name": "Ransomware",
+      "description": "Security incidents related to ransomware",
+      "frequency": 0.44,
+      "attack_vector": "Various",
+      "severity": "Medium",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "keyword_based_extraction",
+      "mitre_techniques": [],
+      "detection_methods": [
+        "General security monitoring",
+        "Log analysis"
+      ],
+      "affected_systems": [
+        "Various systems"
+      ]
+    },
+    {
+      "id": "dbir_credential",
+      "name": "Credential Attacks",
+      "description": "Security incidents related to credential attacks",
+      "frequency": 0.3,
+      "attack_vector": "Various",
+      "severity": "Medium",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "keyword_based_extraction",
+      "mitre_techniques": [],
+      "detection_methods": [
+        "General security monitoring",
+        "Log analysis"
+      ],
+      "affected_systems": [
+        "Various systems"
+      ]
+    },
+    {
+      "id": "dbir_cloud",
+      "name": "Cloud Security Incidents",
+      "description": "Security incidents related to cloud security incidents",
+      "frequency": 0.43,
+      "attack_vector": "Various",
+      "severity": "Medium",
+      "source": "DBIR 2025 PDF",
+      "extraction_method": "keyword_based_extraction",
+      "mitre_techniques": [],
+      "detection_methods": [
+        "General security monitoring",
+        "Log analysis"
+      ],
+      "affected_systems": [
+        "Various systems"
+      ]
+    }
+  ],
+  "industry_data": {
+    "financial": 0.86,
+    "medical": 0.19,
+    "manufacturing": 0.34,
+    "government": 0.39,
+    "education": 0.16
+  },
+  "threat_actors": [
+    {
+      "type": "External",
+      "frequency": 0.24,
+      "source": "DBIR 2025 PDF"
+    },
+    {
+      "type": "Internal",
+      "frequency": 0.73,
+      "source": "DBIR 2025 PDF"
+    }
+  ],
+  "metadata": {
+    "total_pages": 117,
+    "extraction_method": "PyPDF2 + regex patterns"
+  }
+}

@@ -1,0 +1,59 @@
+2025-07-19 03:56:46.916 | INFO     | __main__:main:231 - 🧪 Starting PostgreSQL Migration Tests
+2025-07-19 03:56:46.916 | INFO     | __main__:test_database_connection:19 - === Testing Database Connection ===
+2025-07-19 03:56:46.916 | INFO     | __main__:test_database_connection:23 - Database type: PostgreSQL
+2025-07-19 03:56:46.917 | INFO     | __main__:test_database_connection:24 - Database URL: postgresql://meli:meli2025@postgres:5432/datasec_challenge
+2025-07-19 03:56:46.937 | INFO     | src.services.database:test_connection:168 - Database connection successful
+2025-07-19 03:56:46.937 | INFO     | __main__:test_database_connection:30 - ✅ Database connection successful
+2025-07-19 03:56:46.937 | INFO     | __main__:test_database_initialization:42 - === Testing Database Initialization ===
+2025-07-19 03:56:46.954 | INFO     | src.services.database:create_database_if_not_exists:129 - Database 'datasec_challenge' already exists
+2025-07-19 03:56:46.979 | INFO     | src.services.database:init_database:209 - Database initialized successfully
+2025-07-19 03:56:46.980 | INFO     | __main__:test_database_initialization:47 - ✅ Database initialized successfully
+2025-07-19 03:56:46.980 | INFO     | __main__:test_logging_service:56 - === Testing LoggingService ===
+2025-07-19 03:56:46.980 | INFO     | src.services.logging_service:__init__:17 - LoggingService initialized with PostgreSQL
+2025-07-19 03:56:46.998 | INFO     | src.services.logging_service:create_session:136 - Created session: 5717146d-7c96-4a6d-8f72-3c8b460c2cb7
+2025-07-19 03:56:46.998 | INFO     | __main__:test_logging_service:71 - ✅ Created test session: 5717146d-7c96-4a6d-8f72-3c8b460c2cb7
+2025-07-19 03:56:47.000 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.000 | INFO     | __main__:test_logging_service:88 - ✅ Logged agent interaction
+2025-07-19 03:56:47.002 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - ecosystem_analyzed
+2025-07-19 03:56:47.002 | INFO     | __main__:test_logging_service:104 - ✅ Logged decision
+2025-07-19 03:56:47.006 | INFO     | __main__:test_logging_service:112 - ✅ Retrieved session logs: 1 interactions, 1 decisions
+2025-07-19 03:56:47.006 | INFO     | __main__:test_logging_service:115 - ✅ LoggingService test passed
+2025-07-19 03:56:47.006 | INFO     | __main__:test_session_management:127 - === Testing Session Management ===
+2025-07-19 03:56:47.006 | INFO     | src.services.logging_service:__init__:17 - LoggingService initialized with PostgreSQL
+2025-07-19 03:56:47.007 | INFO     | src.services.logging_service:create_session:136 - Created session: 996e7475-cb5b-4302-a4f1-039652b625fb
+2025-07-19 03:56:47.008 | INFO     | __main__:test_session_management:145 - Session info: {'session_id': '996e7475-cb5b-4302-a4f1-039652b625fb', 'created_at': '2025-07-19T03:56:47.007108+00:00', 'status': 'active', 'metadata': {'test': 'session_management'}, 'ecosystem_description': None, 'completed_at': None}
+2025-07-19 03:56:47.011 | INFO     | src.services.logging_service:update_session_status:179 - Updated session 996e7475-cb5b-4302-a4f1-039652b625fb status to in_progress
+2025-07-19 03:56:47.012 | INFO     | src.services.logging_service:update_session_status:179 - Updated session 996e7475-cb5b-4302-a4f1-039652b625fb status to completed
+2025-07-19 03:56:47.013 | INFO     | __main__:test_session_management:163 - ✅ Session management test passed
+2025-07-19 03:56:47.013 | INFO     | __main__:test_database_performance:175 - === Testing Database Performance ===
+2025-07-19 03:56:47.013 | INFO     | src.services.logging_service:__init__:17 - LoggingService initialized with PostgreSQL
+2025-07-19 03:56:47.014 | INFO     | src.services.logging_service:create_session:136 - Created session: a6738a1b-cbe9-412f-a3ef-a6a2e8cc5443
+2025-07-19 03:56:47.015 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.016 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_0
+2025-07-19 03:56:47.017 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.019 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_1
+2025-07-19 03:56:47.020 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.021 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_2
+2025-07-19 03:56:47.022 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.023 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_3
+2025-07-19 03:56:47.024 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.025 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_4
+2025-07-19 03:56:47.026 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.027 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_5
+2025-07-19 03:56:47.028 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.029 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_6
+2025-07-19 03:56:47.030 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.031 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_7
+2025-07-19 03:56:47.032 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.033 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_8
+2025-07-19 03:56:47.034 | INFO     | src.services.logging_service:log_agent_interaction:46 - Logged interaction: orchestrator -> AgentRole.ANALYZER
+2025-07-19 03:56:47.035 | DEBUG    | src.services.logging_service:log_decision:68 - Logged decision: ANALYZER - test_decision_9
+2025-07-19 03:56:47.035 | INFO     | __main__:test_database_performance:214 - ✅ Performance test completed in 0.02 seconds
+2025-07-19 03:56:47.036 | INFO     | __main__:test_database_performance:219 - ✅ All test data stored correctly
+2025-07-19 03:56:47.036 | INFO     | __main__:main:241 - === Test Results ===
+2025-07-19 03:56:47.036 | INFO     | __main__:main:244 - connection: ✅ PASS
+2025-07-19 03:56:47.036 | INFO     | __main__:main:244 - initialization: ✅ PASS
+2025-07-19 03:56:47.037 | INFO     | __main__:main:244 - logging_service: ✅ PASS
+2025-07-19 03:56:47.037 | INFO     | __main__:main:244 - session_management: ✅ PASS
+2025-07-19 03:56:47.037 | INFO     | __main__:main:244 - performance: ✅ PASS
+2025-07-19 03:56:47.037 | INFO     | __main__:main:249 - 🎉 All PostgreSQL migration tests passed!

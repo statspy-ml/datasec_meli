@@ -1,0 +1,1351 @@
+{
+  "session_id": "84b389f6-f712-41fe-ab09-13604271a74f",
+  "scenario": "custom",
+  "input": "Sistema de pagamento online in Microservices",
+  "result": {
+    "id": "b203c95c-6730-43c2-bd97-4f1259e80719",
+    "session_id": "84b389f6-f712-41fe-ab09-13604271a74f",
+    "ecosystem_context": {
+      "description": "Sistema de pagamento online in Microservices",
+      "technologies": [
+        "Microservices"
+      ],
+      "architecture_type": "microservices",
+      "security_controls": [],
+      "data_sensitivity": "medium",
+      "compliance_requirements": []
+    },
+    "priority_detectors": [
+      {
+        "id": "8a919f48-7f75-42d3-a33f-585bb94e2762",
+        "name": "API Gateway Monitoring",
+        "description": "Monitors API gateway logs for suspicious activity, such as API abuse, service impersonation, and network segmentation bypass attempts",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1666",
+            "name": "Modify Cloud Resource Hierarchy",
+            "description": "Adversaries may attempt to modify hierarchical structures in infrastructure-as-a-service (IaaS) environments in order to evade defenses.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1578",
+            "name": "Modify Cloud Compute Infrastructure",
+            "description": "An adversary may attempt to modify a cloud account's compute service infrastructure to evade defenses. A modification to the compute service infrastructure can include the creation, deletion, or modification of one or more components such as compute instances, virtual machines, and snapshots.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1071.004",
+            "name": "DNS",
+            "description": "Adversaries may communicate using the Domain Name System (DNS) application layer protocol to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and mitigating service-to-service attacks in a microservices architecture"
+      },
+      {
+        "id": "c84242ad-b5ba-445b-960d-29bf02ef10b3",
+        "name": "Service Mesh Monitoring",
+        "description": "Monitors service mesh traffic and logs for anomalies, policy violations, and potential attacks",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1557",
+            "name": "Adversary-in-the-Middle",
+            "description": "Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as [Network Sniffing](https://attack.mitre.org/techniques/T1040), [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002), or replay attacks ([Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212)). By abusing features of common networking protocols that can determine the flow of ...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1172",
+            "name": "Domain Fronting",
+            "description": "Domain fronting takes advantage of routing schemes in Content Delivery Networks (CDNs) and other services which host multiple domains to obfuscate the intended destination of HTTPS traffic or traffic tunneled through HTTPS. (Citation: Fifield Blocking Resistent Communication through domain fronting 2015) The technique involves using different domain names in the SNI field of the TLS header and the Host field of the HTTP header. If both domains are served from the same CDN, then the CDN may route...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1600",
+            "name": "Weaken Encryption",
+            "description": "Adversaries may compromise a network device’s encryption capability in order to bypass encryption that would otherwise protect data communications. (Citation: Cisco Synful Knock Evolution)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Essential for securing inter-service communication and detecting service-to-service attacks"
+      },
+      {
+        "id": "ca9e9ae8-2e51-4b2b-9aab-6721a36a0916",
+        "name": "Authentication and Authorization Monitoring",
+        "description": "Monitors authentication and authorization mechanisms for suspicious activity, such as brute-force attacks, credential stuffing, and privilege escalation attempts",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1078",
+            "name": "Valid Accounts",
+            "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.",
+            "tactics": [
+              "initial-access",
+              "persistence",
+              "privilege-escalation",
+              "defense-evasion"
+            ],
+            "platforms": [
+              "linux",
+              "windows",
+              "mac"
+            ]
+          },
+          {
+            "technique_id": "T1110",
+            "name": "Brute Force",
+            "description": "Adversaries may use brute force techniques to attempt access to accounts using previously obtained credentials.",
+            "tactics": [
+              "credential-access"
+            ],
+            "platforms": [
+              "linux",
+              "windows",
+              "mac"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "critical",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for protecting against unauthorized access and maintaining system integrity"
+      },
+      {
+        "id": "5d4f213b-588a-4472-87c6-e4fa74671fb5",
+        "name": "Database Activity Monitoring",
+        "description": "Monitors database activity logs for suspicious queries, data exfiltration attempts, and unauthorized access",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1528",
+            "name": "Steal Application Access Token",
+            "description": "Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.",
+            "tactics": [
+              "credential-access"
+            ],
+            "platforms": [
+              "web",
+              "database"
+            ]
+          },
+          {
+            "technique_id": "T1212",
+            "name": "Exploitation for Credential Access",
+            "description": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code.",
+            "tactics": [
+              "credential-access"
+            ],
+            "platforms": [
+              "web",
+              "database"
+            ]
+          },
+          {
+            "technique_id": "T1657",
+            "name": "Financial Theft",
+            "description": "Adversaries may steal monetary resources from targets through extortion, social engineering, technical theft, or other methods aimed at their own financial gain at the expense of the availability of these resources for victims. Financial theft is the ultimate objective of several popular campaign types including extortion by ransomware,(Citation: FBI-ransomware) business email compromise (BEC) and fraud,(Citation: FBI-BEC) \"pig butchering,\"(Citation: wired-pig butchering) bank hacking,(Citation:...",
+            "tactics": [
+              "impact"
+            ],
+            "platforms": [
+              "web",
+              "database"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Essential for protecting sensitive data and ensuring data integrity"
+      },
+      {
+        "id": "2c0f4fae-b197-4ee2-b64d-fdb2ccf00d11",
+        "name": "Network Traffic Analysis",
+        "description": "Analyzes network traffic for anomalies, policy violations, and potential threats",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1557",
+            "name": "Adversary-in-the-Middle",
+            "description": "Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as [Network Sniffing](https://attack.mitre.org/techniques/T1040), [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002), or replay attacks ([Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212)). By abusing features of common networking protocols that can determine the flow of ...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1172",
+            "name": "Domain Fronting",
+            "description": "Domain fronting takes advantage of routing schemes in Content Delivery Networks (CDNs) and other services which host multiple domains to obfuscate the intended destination of HTTPS traffic or traffic tunneled through HTTPS. (Citation: Fifield Blocking Resistent Communication through domain fronting 2015) The technique involves using different domain names in the SNI field of the TLS header and the Host field of the HTTP header. If both domains are served from the same CDN, then the CDN may route...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1600",
+            "name": "Weaken Encryption",
+            "description": "Adversaries may compromise a network device’s encryption capability in order to bypass encryption that would otherwise protect data communications. (Citation: Cisco Synful Knock Evolution)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and mitigating network-based attacks and service-to-service attacks"
+      },
+      {
+        "id": "a2a3f10a-ec56-422b-ba73-d86efe99f800",
+        "name": "Payment Transaction Monitoring",
+        "description": "Monitors payment transactions for suspicious activity, such as fraud, unauthorized access, and data tampering",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1657",
+            "name": "Financial Theft",
+            "description": "Adversaries may steal monetary resources from targets through extortion, social engineering, technical theft, or other methods aimed at their own financial gain at the expense of the availability of these resources for victims.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1528",
+            "name": "Steal Application Access Token",
+            "description": "Adversaries can steal application access tokens as a means of acquiring credentials to access remote systems and resources.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1212",
+            "name": "Exploitation for Credential Access",
+            "description": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "critical",
+        "implementation_effort": "high",
+        "rationale": "Essential for protecting financial data and ensuring transaction integrity in payment systems"
+      },
+      {
+        "id": "eddde5c2-bd44-459f-87c2-107d9a643503",
+        "name": "Application Security Monitoring",
+        "description": "Monitors application logs, inputs, and behavior for potential vulnerabilities, attacks, and policy violations",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1557",
+            "name": "Adversary-in-the-Middle",
+            "description": "Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as [Network Sniffing](https://attack.mitre.org/techniques/T1040), [Transmitted Data Manipulation](https://attack.mitre.org/techniques/T1565/002), or replay attacks ([Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212)). By abusing features of common networking protocols that can determine the flow of network traffic, adversaries may be able to insert themselves into a communication channel on a network that they are not originally apart of.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1613",
+            "name": "Container and Resource Discovery",
+            "description": "Adversaries may attempt to discover containers and other resources that are available within a containers environment. Other resources may include images, deployments, pods, nodes, and other information such as the status of a cluster.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1110.001",
+            "name": "Password Guessing",
+            "description": "Adversaries with no prior knowledge of legitimate credentials within the system or environment may guess passwords to attempt access to accounts. Without knowledge of the password for an account, an adversary may opt to systematically guess the password using a repetitive or iterative mechanism. An adversary may guess login credentials without prior knowledge of system or environment passwords during an operation by using a list of common passwords. Password guessing may or may not take into account contextual information about the target.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and mitigating application-level attacks and ensuring application security"
+      },
+      {
+        "id": "4f6b2a7f-3e8f-433e-a5fe-fa43efa8f46f",
+        "name": "Vulnerability Management",
+        "description": "Continuously scans and monitors systems, applications, and infrastructure for known vulnerabilities and misconfigurations",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1047",
+            "name": "Windows Management Instrumentation",
+            "description": "Adversaries may abuse Windows Management Instrumentation (WMI) to execute malicious commands and payloads. WMI is designed for programmers and is the infrastructure for management data and operations on Windows systems.(Citation: WMI 1-3) WMI is an administration feature that provides a uniform environment to access Windows system components.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1033",
+            "name": "System Owner/User Discovery",
+            "description": "Adversaries may attempt to identify the primary user, currently logged in user, set of users that commonly uses a system, or whether a user is actively using the system. They may do this, for example, by retrieving account usernames or by using [OS Credential Dumping](https://attack.mitre.org/techniques/T1003). The information may be collected in a number of different ways using other Discovery techniques, because user and username details are prevalent throughout a system and include running pr...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for identifying and mitigating potential security risks and ensuring system resilience"
+      },
+      {
+        "id": "88ff942c-588f-4b0c-b6ef-d2effa8e4dd3",
+        "name": "Cloud Infrastructure Monitoring",
+        "description": "Monitors cloud infrastructure resources, configurations, and activities for potential security risks and policy violations",
+        "priority": "medium",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1583",
+            "name": "Acquire Infrastructure",
+            "description": "Adversaries may buy, lease, rent, or obtain infrastructure that can be used during targeting. A wide variety of infrastructure exists for hosting and orchestrating adversary operations. Infrastructure solutions include physical or cloud servers, domains, and third-party web services.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1583.007",
+            "name": "Serverless",
+            "description": "Adversaries may purchase and configure serverless cloud infrastructure, such as Cloudflare Workers, AWS Lambda functions, or Google Apps Scripts, that can be used during targeting. By utilizing serverless infrastructure, adversaries can make it more difficult to attribute infrastructure used during operations back to them.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1578.004",
+            "name": "Revert Cloud Instance",
+            "description": "An adversary may revert changes made to a cloud instance after they have performed malicious activities in attempt to evade detection and remove evidence of their presence. In highly virtualized environments, such as cloud-based infrastructure, this may be accomplished by restoring virtual machine (VM) or data storage snapshots through the cloud management dashboard or cloud APIs.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 9.75,
+        "impact_level": "medium",
+        "implementation_effort": "medium",
+        "rationale": "Important for securing cloud-based microservices and ensuring compliance with cloud security best practices"
+      },
+      {
+        "id": "6340250c-5a34-406e-aab9-75fbbbe5e8af",
+        "name": "Container Security Monitoring",
+        "description": "Monitors container activity, configurations, and vulnerabilities for potential security risks",
+        "priority": "medium",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1584.008",
+            "name": "Network Devices",
+            "description": "Adversaries may compromise third-party network devices that can be used during targeting. Network devices, such as small office/home office (SOHO) routers, may be compromised where the adversary's ultimate goal is not [Initial Access](https://attack.mitre.org/tactics/TA0001) to that environment -- instead leveraging these devices to support additional targeting.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1583.002",
+            "name": "DNS Server",
+            "description": "Adversaries may set up their own Domain Name System (DNS) servers that can be used during targeting. During post-compromise activity, adversaries may utilize DNS traffic for various tasks, including for Command and Control (ex: [Application Layer Protocol](https://attack.mitre.org/techniques/T1071)). Instead of hijacking existing DNS servers, adversaries may opt to configure and run their own DNS servers in support of operations.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 8.4,
+        "impact_level": "medium",
+        "implementation_effort": "medium",
+        "rationale": "Important for securing containerized microservices and preventing container-based attacks"
+      }
+    ],
+    "executive_summary": "Executive Summary\n\nThe recent security analysis of our microservices architecture has revealed significant risks that require immediate attention. With an average risk score of 9.8/10 and 8 out of 10 detectors classified as high priority, the findings underscore the critical need for prompt remediation measures.\n\nThe most pressing security gap identified is the lack of adequate monitoring and logging mechanisms for our API Gateway, which serves as the primary entry point for external requests. This vulnerability exposes our system to potential unauthorized access, data breaches, and other malicious activities, posing a severe threat to the confidentiality, integrity, and availability of our services.\n\nTo mitigate these risks, it is imperative that we prioritize the implementation of robust monitoring and logging solutions for the API Gateway. This should include comprehensive logging of all incoming requests, real-time monitoring for suspicious activities, and the establishment of incident response protocols. Additionally, we must address the other high-risk detectors identified in the report, such as potential credential access vulnerabilities and the lack of proper access controls.\n\nFailure to address these critical security gaps promptly could result in significant business impacts, including data breaches, regulatory non-compliance, reputational damage, and potential financial losses. It is recommended that we allocate the necessary resources and establish a dedicated task force to implement the recommended security measures within the next 60 days.\n\nBy prioritizing these security enhancements, we can ensure the protection of our valuable data assets, maintain regulatory compliance, and foster trust among our customers and stakeholders. The security of our systems is paramount, and we must act swiftly to safeguard our business operations and maintain our competitive advantage.",
+    "implementation_roadmap": [
+      {
+        "phase": 1,
+        "name": "Critical Security Controls",
+        "timeline": "4 weeks",
+        "priority": "critical",
+        "detectors": [
+          "8a919f48-7f75-42d3-a33f-585bb94e2762",
+          "c84242ad-b5ba-445b-960d-29bf02ef10b3",
+          "ca9e9ae8-2e51-4b2b-9aab-6721a36a0916",
+          "5d4f213b-588a-4472-87c6-e4fa74671fb5",
+          "2c0f4fae-b197-4ee2-b64d-fdb2ccf00d11"
+        ],
+        "detector_names": [
+          "API Gateway Monitoring",
+          "Service Mesh Monitoring",
+          "Authentication and Authorization Monitoring",
+          "Database Activity Monitoring",
+          "Network Traffic Analysis"
+        ],
+        "estimated_effort": "200 horas",
+        "required_tools": [
+          "DLP",
+          "Database Activity Monitoring",
+          "Identity Management",
+          "Alerting System",
+          "API Gateway Logs",
+          "Rate Limiting",
+          "SIEM",
+          "Authentication Logs",
+          "Network Monitoring",
+          "Log Management",
+          "Firewall Logs"
+        ],
+        "success_metrics": [
+          "Detecção ativa de ameaças críticas",
+          "Redução de 80% em falsos positivos",
+          "Tempo de resposta < 5 minutos"
+        ],
+        "budget_estimate": "R$ 125,000",
+        "key_milestones": [
+          "Configuração de logs e fontes de dados",
+          "Desenvolvimento de regras de detecção",
+          "Testes e ajuste fino",
+          "Deploy em produção"
+        ]
+      },
+      {
+        "phase": 2,
+        "name": "Enhanced Monitoring",
+        "timeline": "8 weeks",
+        "priority": "high",
+        "detectors": [
+          "a2a3f10a-ec56-422b-ba73-d86efe99f800",
+          "eddde5c2-bd44-459f-87c2-107d9a643503",
+          "4f6b2a7f-3e8f-433e-a5fe-fa43efa8f46f",
+          "88ff942c-588f-4b0c-b6ef-d2effa8e4dd3",
+          "6340250c-5a34-406e-aab9-75fbbbe5e8af"
+        ],
+        "detector_names": [
+          "Payment Transaction Monitoring",
+          "Application Security Monitoring",
+          "Vulnerability Management",
+          "Cloud Infrastructure Monitoring",
+          "Container Security Monitoring"
+        ],
+        "estimated_effort": "150 horas",
+        "required_tools": [
+          "Alerting System",
+          "Log Management",
+          "SIEM"
+        ],
+        "success_metrics": [
+          "Cobertura de detecção expandida",
+          "Integração com SIEM estabelecida",
+          "Alertas automatizados funcionando"
+        ],
+        "budget_estimate": "R$ 100,000",
+        "dependencies": [
+          "Conclusão da Fase 1"
+        ]
+      }
+    ],
+    "created_at": "2025-07-20T07:11:33.479995",
+    "actionable_items": [
+      {
+        "detector_id": "8a919f48-7f75-42d3-a33f-585bb94e2762",
+        "detector_name": "API Gateway Monitoring",
+        "priority": "high",
+        "estimated_total_time": "10 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis",
+          "API Security",
+          "Rate Limiting"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Configure API gateway logging and forwarding to a centralized log management system",
+            "owner": "Cloud Engineering Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to API gateway configuration",
+              "Log management system setup"
+            ],
+            "deliverables": [
+              "API gateway logs forwarded to log management system"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Develop detection rules and correlation queries for suspicious API activity",
+            "owner": "Security Analytics Team",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to log management system",
+              "Understanding of API abuse patterns"
+            ],
+            "deliverables": [
+              "Detection rules and queries for API abuse, service impersonation, and network segmentation bypass"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Implement alerting and notification mechanisms for detected threats",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Detection rules and queries",
+              "Incident response procedures"
+            ],
+            "deliverables": [
+              "Alerting and notification mechanisms integrated with SIEM"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Conduct regular testing and validation of detection capabilities",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Implemented detection rules and queries",
+              "Test cases and scenarios"
+            ],
+            "deliverables": [
+              "Regular testing and validation reports",
+              "Continuous improvement of detection capabilities"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Develop and maintain documentation and training materials",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks (initial), then ongoing",
+            "complexity": "low",
+            "prerequisites": [
+              "Implemented detection and response mechanisms"
+            ],
+            "deliverables": [
+              "Documentation and training materials for API gateway monitoring"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "c84242ad-b5ba-445b-960d-29bf02ef10b3",
+        "detector_name": "Service Mesh Monitoring",
+        "priority": "high",
+        "estimated_total_time": "10 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Implement service mesh monitoring tools and agents",
+            "owner": "DevOps Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Service mesh infrastructure",
+              "Monitoring tool selection"
+            ],
+            "deliverables": [
+              "Monitoring agents deployed",
+              "Data collection configured"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define monitoring rules and policies",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Threat modeling",
+              "Security requirements"
+            ],
+            "deliverables": [
+              "Monitoring rules defined",
+              "Policies documented"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate monitoring data with SIEM and analytics platforms",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "SIEM infrastructure",
+              "Data ingestion pipelines"
+            ],
+            "deliverables": [
+              "Data ingestion configured",
+              "Alerting and reporting enabled"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement incident response and remediation processes",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Incident response plan",
+              "Remediation procedures"
+            ],
+            "deliverables": [
+              "Incident response playbooks",
+              "Remediation automation"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct regular testing and validation",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Test plans",
+              "Validation criteria"
+            ],
+            "deliverables": [
+              "Test reports",
+              "Continuous improvement"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "ca9e9ae8-2e51-4b2b-9aab-6721a36a0916",
+        "detector_name": "Authentication and Authorization Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Configure log collection from relevant sources",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to log sources",
+              "SIEM configuration"
+            ],
+            "deliverables": [
+              "Log ingestion configured",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define authentication and authorization monitoring rules",
+            "owner": "Security Analyst Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of authentication/authorization mechanisms",
+              "Knowledge of attack patterns"
+            ],
+            "deliverables": [
+              "Monitoring rules defined",
+              "Rules tested and validated"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Implement monitoring rules in SIEM or log analysis tool",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Monitoring rules defined",
+              "Access to SIEM/log analysis tool"
+            ],
+            "deliverables": [
+              "Monitoring rules implemented",
+              "Testing and validation completed"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Configure alert notifications and response procedures",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Monitoring rules implemented",
+              "Incident response plan"
+            ],
+            "deliverables": [
+              "Alert notifications configured",
+              "Response procedures documented"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct periodic review and tuning of monitoring rules",
+            "owner": "Security Analyst Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Monitoring rules implemented",
+              "Access to log data"
+            ],
+            "deliverables": [
+              "Monitoring rules reviewed and updated",
+              "False positive/negative rates optimized"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Integrate with other security controls and processes",
+            "owner": "Security Engineering Team",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Monitoring rules implemented",
+              "Other security controls in place"
+            ],
+            "deliverables": [
+              "Integration with other security controls",
+              "Unified security monitoring and response"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "5d4f213b-588a-4472-87c6-e4fa74671fb5",
+        "detector_name": "Database Activity Monitoring",
+        "priority": "high",
+        "estimated_total_time": "10 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis",
+          "Database Security",
+          "SQL"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log sources for database activity monitoring",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to database servers",
+              "Logging enabled on databases"
+            ],
+            "deliverables": [
+              "Log sources configured",
+              "Log ingestion validated"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define and implement detection rules for suspicious queries and data exfiltration attempts",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of database activity patterns",
+              "Access to threat intelligence"
+            ],
+            "deliverables": [
+              "Detection rules implemented",
+              "Testing and tuning completed"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate database activity monitoring with SIEM and incident response processes",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "SIEM deployment",
+              "Incident response procedures"
+            ],
+            "deliverables": [
+              "Integration with SIEM completed",
+              "Incident response playbooks updated"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement user activity monitoring and access controls for database administrators",
+            "owner": "Identity and Access Management Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Database user management processes",
+              "Privileged access management solution"
+            ],
+            "deliverables": [
+              "User activity monitoring implemented",
+              "Access controls enforced"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct regular reviews and tuning of detection rules and monitoring processes",
+            "owner": "Security Analytics Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Established monitoring processes",
+              "Threat intelligence updates"
+            ],
+            "deliverables": [
+              "Regular reviews conducted",
+              "Detection rules updated"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "2c0f4fae-b197-4ee2-b64d-fdb2ccf00d11",
+        "detector_name": "Network Traffic Analysis",
+        "priority": "high",
+        "estimated_total_time": "10 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis",
+          "Network Security",
+          "Traffic Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Deploy network traffic monitoring sensors at strategic points",
+            "owner": "Network Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Network topology map",
+              "Approved sensor deployment plan"
+            ],
+            "deliverables": [
+              "Sensors deployed and configured",
+              "Traffic mirroring enabled"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Implement network traffic analysis rules and signatures",
+            "owner": "Security Engineering Team",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Threat intelligence feeds",
+              "Existing security policies"
+            ],
+            "deliverables": [
+              "Ruleset for anomaly detection",
+              "Signature updates"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate network traffic analysis with SIEM and other security tools",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "SIEM access",
+              "API documentation for security tools"
+            ],
+            "deliverables": [
+              "Data ingestion pipeline",
+              "Correlation rules"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Establish incident response procedures for detected threats",
+            "owner": "Incident Response Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Existing incident response plan",
+              "Training for analysts"
+            ],
+            "deliverables": [
+              "Threat triage process",
+              "Escalation procedures"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct regular testing and tuning of network traffic analysis",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Test environment",
+              "Labeled traffic datasets"
+            ],
+            "deliverables": [
+              "Continuous improvement plan",
+              "Performance reports"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "a2a3f10a-ec56-422b-ba73-d86efe99f800",
+        "detector_name": "Payment Transaction Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and integrate relevant data sources",
+            "owner": "Security Engineering Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to payment gateways",
+              "Integration with fraud detection systems"
+            ],
+            "deliverables": [
+              "Data sources integrated",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define and implement transaction monitoring rules",
+            "owner": "Security Analytics Team",
+            "timeline": "4 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of fraud patterns",
+              "Access to historical data"
+            ],
+            "deliverables": [
+              "Monitoring rules defined",
+              "Rules implemented in SIEM"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Establish alert triage and response processes",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Incident response plan",
+              "Collaboration with fraud investigation team"
+            ],
+            "deliverables": [
+              "Alert triage process defined",
+              "Response playbooks created"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement user behavior analytics",
+            "owner": "Data Science Team",
+            "timeline": "6 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to user activity data",
+              "Machine learning expertise"
+            ],
+            "deliverables": [
+              "User behavior models developed",
+              "Anomaly detection integrated"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct regular testing and tuning",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Test data",
+              "Collaboration with business stakeholders"
+            ],
+            "deliverables": [
+              "Testing schedule established",
+              "Continuous improvement process"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Implement security monitoring and hardening",
+            "owner": "Security Operations Team",
+            "timeline": "3 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to monitoring tools",
+              "Secure configuration guidelines"
+            ],
+            "deliverables": [
+              "Monitoring and hardening implemented",
+              "Security posture improved"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "eddde5c2-bd44-459f-87c2-107d9a643503",
+        "detector_name": "Application Security Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Configure log collection from relevant sources",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to log sources",
+              "SIEM configuration"
+            ],
+            "deliverables": [
+              "Log ingestion configured",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define application security policies and rules",
+            "owner": "Application Security Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Application architecture documentation",
+              "Threat modeling"
+            ],
+            "deliverables": [
+              "Security policy document",
+              "Rule set for monitoring"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Implement application monitoring agents or instrumentation",
+            "owner": "Application Development Team",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to application codebase",
+              "Secure coding practices"
+            ],
+            "deliverables": [
+              "Monitoring agents deployed",
+              "Integration with SIEM"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Configure alerting and incident response workflows",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "SIEM integration",
+              "Incident response plan"
+            ],
+            "deliverables": [
+              "Alert rules configured",
+              "Incident response playbooks"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct security testing and validation",
+            "owner": "Security Testing Team",
+            "timeline": "4 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Test environment",
+              "Security testing tools"
+            ],
+            "deliverables": [
+              "Security testing report",
+              "Remediation plan"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Implement continuous monitoring and improvement",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Monitoring infrastructure",
+              "Feedback loop"
+            ],
+            "deliverables": [
+              "Continuous monitoring process",
+              "Periodic security reviews"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "4f6b2a7f-3e8f-433e-a5fe-fa43efa8f46f",
+        "detector_name": "Vulnerability Management",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and inventory all systems, applications, and infrastructure components to be scanned",
+            "owner": "Security Engineering Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to asset inventory",
+              "Collaboration with IT operations"
+            ],
+            "deliverables": [
+              "Comprehensive asset inventory"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Evaluate and select vulnerability scanning tools and services",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Requirements gathering",
+              "Budget allocation"
+            ],
+            "deliverables": [
+              "Vulnerability scanning solution selected"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Configure and integrate vulnerability scanning tools with existing security infrastructure",
+            "owner": "Security Engineering Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to security infrastructure",
+              "Vendor support"
+            ],
+            "deliverables": [
+              "Vulnerability scanning integrated with SIEM, ticketing system, etc."
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Establish vulnerability scanning schedules and policies",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Vulnerability scanning solution deployed",
+              "Stakeholder input"
+            ],
+            "deliverables": [
+              "Vulnerability scanning policies and schedules defined"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Implement vulnerability remediation processes and workflows",
+            "owner": "Security Engineering Team, IT Operations",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Vulnerability scanning operational",
+              "Change management processes"
+            ],
+            "deliverables": [
+              "Vulnerability remediation processes and workflows established"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Conduct regular vulnerability scanning and monitoring",
+            "owner": "Security Engineering Team, IT Operations",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Vulnerability scanning solution deployed",
+              "Remediation processes in place"
+            ],
+            "deliverables": [
+              "Continuous vulnerability monitoring and reporting"
+            ]
+          }
+        ]
+      }
+    ],
+    "risk_analysis": {
+      "total_detectors": 10,
+      "risk_distribution": {
+        "high": 10,
+        "medium": 0,
+        "low": 0
+      },
+      "average_risk_score": 9.82,
+      "highest_risk_detector": "API Gateway Monitoring",
+      "top_mitre_tactics": [
+        {
+          "tactic": "unknown",
+          "count": 22
+        },
+        {
+          "tactic": "credential-access",
+          "count": 3
+        },
+        {
+          "tactic": "initial-access",
+          "count": 1
+        },
+        {
+          "tactic": "persistence",
+          "count": 1
+        },
+        {
+          "tactic": "privilege-escalation",
+          "count": 1
+        }
+      ],
+      "total_mitre_techniques": 27,
+      "recommendation": "CRÍTICO: Múltiplos detectores de alto risco identificados. Priorize implementação imediata dos detectores de maior score."
+    },
+    "metadata": {
+      "generated_at": "2025-07-20T07:11:33.480225",
+      "total_detectors": 10,
+      "high_priority_count": 8,
+      "average_risk_score": 9.82,
+      "estimated_implementation_time": "7 meses"
+    }
+  },
+  "additional_context": {
+    "architecture": "K8s django application",
+    "database": "postgresql with encrypted sensitive data",
+    "integrations": [
+      "stripe",
+      "paypal",
+      "banco_central"
+    ],
+    "security_features": [
+      "oauth2",
+      "fraud_detection",
+      "audit_logs"
+    ],
+    "compliance": [
+      "PCI-DSS",
+      "LGPD"
+    ],
+    "infrastructure": [
+      "api_gateway",
+      "load_balancer",
+      "redis_cache"
+    ]
+  },
+  "timestamp": "2025-01-01T00:00:00Z"
+}

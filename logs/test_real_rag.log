@@ -1,0 +1,238 @@
+2025-07-19 03:24:21.957 | INFO     | __main__:main:187 - 🧪 Starting RAG System Tests with Real DBIR Data
+2025-07-19 03:24:21.958 | INFO     | __main__:test_pdf_processor:16 - === Testing PDF Processor ===
+2025-07-19 03:24:21.980 | INFO     | __main__:test_pdf_processor:30 - Extracting text from PDF...
+2025-07-19 03:24:25.104 | INFO     | src.services.pdf_processor:extract_all_text:34 - Extracted text from 117 pages
+2025-07-19 03:24:25.105 | INFO     | __main__:test_pdf_processor:34 - Successfully extracted 271536 characters from PDF
+2025-07-19 03:24:25.105 | INFO     | __main__:test_pdf_processor:35 - First 200 characters: 
+--- PAGE 1 ---
+ 2025 Data Breach 
+Investigations Report
+ 
+ 2025 Data Breach 
+Investigations Report
+ 
+
+--- PAGE 2 ---
+ 
+36%
+25%
+22%
+9%
+8%2024
+System Intrusion
+Miscellaneous Errors
+Social Engineering
+B...
+2025-07-19 03:24:25.105 | INFO     | __main__:test_pdf_processor:41 - Extracting attack patterns...
+2025-07-19 03:24:25.108 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 66.0% for web application
+2025-07-19 03:24:25.111 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 80.0% for system intrusion
+2025-07-19 03:24:25.114 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 96.0% for social engineering
+2025-07-19 03:24:25.127 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 42.0% for malware
+2025-07-19 03:24:25.129 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 44.0% for ransomware
+2025-07-19 03:24:25.130 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 30.0% for credential
+2025-07-19 03:24:25.148 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 43.0% for cloud
+2025-07-19 03:24:25.161 | INFO     | src.services.pdf_processor:extract_attack_patterns:72 - Extracted 7 attack patterns from DBIR PDF
+2025-07-19 03:24:25.161 | INFO     | __main__:test_pdf_processor:45 - Successfully extracted 7 attack patterns
+2025-07-19 03:24:25.161 | INFO     | __main__:test_pdf_processor:47 - Pattern 1: Web Application Attacks (freq: 0.66)
+2025-07-19 03:24:25.162 | INFO     | __main__:test_pdf_processor:47 - Pattern 2: System Intrusion (freq: 0.8)
+2025-07-19 03:24:25.162 | INFO     | __main__:test_pdf_processor:47 - Pattern 3: Social Engineering (freq: 0.96)
+2025-07-19 03:24:25.165 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 66.0% for web application
+2025-07-19 03:24:25.167 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 80.0% for system intrusion
+2025-07-19 03:24:25.170 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 96.0% for social engineering
+2025-07-19 03:24:25.182 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 42.0% for malware
+2025-07-19 03:24:25.184 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 44.0% for ransomware
+2025-07-19 03:24:25.186 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 30.0% for credential
+2025-07-19 03:24:25.202 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 43.0% for cloud
+2025-07-19 03:24:25.215 | INFO     | src.services.pdf_processor:extract_attack_patterns:72 - Extracted 7 attack patterns from DBIR PDF
+2025-07-19 03:24:25.217 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 86.0% for financial
+2025-07-19 03:24:25.242 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 19.0% for medical
+2025-07-19 03:24:25.273 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 34.0% for manufacturing
+2025-07-19 03:24:25.284 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 39.0% for government
+2025-07-19 03:24:25.295 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 16.0% for education
+2025-07-19 03:24:25.329 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 24.0% for external threats
+2025-07-19 03:24:25.331 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 73.0% for internal threats
+2025-07-19 03:24:25.333 | INFO     | src.services.pdf_processor:save_extracted_data:341 - Saved extracted DBIR data to data/mitre-attack/test_extracted_data.json
+2025-07-19 03:24:25.334 | INFO     | __main__:test_pdf_processor:56 - Successfully saved extracted data to data/mitre-attack/test_extracted_data.json
+2025-07-19 03:24:25.334 | INFO     | __main__:test_dbir_service:68 - === Testing DBIR Service ===
+2025-07-19 03:24:25.584 | INFO     | src.services.dbir_service:_load_dbir_data:24 - Processing real DBIR PDF: data/mitre-attack/2025-dbir-data-breach-investigations-report.pdf
+2025-07-19 03:24:28.810 | INFO     | src.services.pdf_processor:extract_all_text:34 - Extracted text from 117 pages
+2025-07-19 03:24:28.815 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 66.0% for web application
+2025-07-19 03:24:28.817 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 80.0% for system intrusion
+2025-07-19 03:24:28.820 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 96.0% for social engineering
+2025-07-19 03:24:28.832 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 42.0% for malware
+2025-07-19 03:24:28.834 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 44.0% for ransomware
+2025-07-19 03:24:28.836 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 30.0% for credential
+2025-07-19 03:24:28.852 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 43.0% for cloud
+2025-07-19 03:24:28.865 | INFO     | src.services.pdf_processor:extract_attack_patterns:72 - Extracted 7 attack patterns from DBIR PDF
+2025-07-19 03:24:28.867 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 86.0% for financial
+2025-07-19 03:24:28.891 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 19.0% for medical
+2025-07-19 03:24:28.920 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 34.0% for manufacturing
+2025-07-19 03:24:28.932 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 39.0% for government
+2025-07-19 03:24:28.942 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 16.0% for education
+2025-07-19 03:24:28.976 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 24.0% for external threats
+2025-07-19 03:24:28.978 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 73.0% for internal threats
+2025-07-19 03:24:28.978 | INFO     | src.services.dbir_service:_load_dbir_data:43 - Successfully loaded 7 real attack patterns from DBIR PDF
+2025-07-19 03:24:28.981 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 66.0% for web application
+2025-07-19 03:24:28.984 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 80.0% for system intrusion
+2025-07-19 03:24:28.987 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 96.0% for social engineering
+2025-07-19 03:24:28.999 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 42.0% for malware
+2025-07-19 03:24:29.001 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 44.0% for ransomware
+2025-07-19 03:24:29.002 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 30.0% for credential
+2025-07-19 03:24:29.019 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 43.0% for cloud
+2025-07-19 03:24:29.032 | INFO     | src.services.pdf_processor:extract_attack_patterns:72 - Extracted 7 attack patterns from DBIR PDF
+2025-07-19 03:24:29.034 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 86.0% for financial
+2025-07-19 03:24:29.059 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 19.0% for medical
+2025-07-19 03:24:29.089 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 34.0% for manufacturing
+2025-07-19 03:24:29.100 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 39.0% for government
+2025-07-19 03:24:29.111 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 16.0% for education
+2025-07-19 03:24:29.144 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 24.0% for external threats
+2025-07-19 03:24:29.146 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 73.0% for internal threats
+2025-07-19 03:24:29.148 | INFO     | src.services.pdf_processor:save_extracted_data:341 - Saved extracted DBIR data to data/mitre-attack/dbir_extracted_data.json
+2025-07-19 03:24:29.149 | INFO     | __main__:test_dbir_service:78 - DBIR Service loaded data from: DBIR 2025 PDF (Real)
+2025-07-19 03:24:29.149 | INFO     | __main__:test_dbir_service:81 - Loaded 7 attack patterns
+2025-07-19 03:24:29.149 | INFO     | __main__:test_dbir_service:84 - Testing threat relevance...
+2025-07-19 03:24:29.149 | INFO     | __main__:test_dbir_service:90 - Found 3 relevant threats
+2025-07-19 03:24:29.150 | INFO     | __main__:test_dbir_service:92 - - System Intrusion (freq: 0.8)
+2025-07-19 03:24:29.150 | INFO     | __main__:test_dbir_service:92 - - Web Application Attacks (freq: 0.66)
+2025-07-19 03:24:29.150 | INFO     | __main__:test_dbir_service:92 - - Service-to-Service Attacks (freq: 0.2)
+2025-07-19 03:24:29.150 | INFO     | __main__:test_dbir_service:96 - Threat statistics: {
+  "total_attack_patterns": 7,
+  "most_common_attack": {
+    "name": "Social Engineering",
+    "frequency": 0.96,
+    "industries": [
+      "financial",
+      "retail",
+      "healthcare",
+      "manufacturing"
+    ],
+    "techniques": [
+      "T1566",
+      "T1078",
+      "T1204"
+    ],
+    "detection_methods": [
+      "Email security monitoring",
+      "User behavior analytics",
+      "Security awareness metrics",
+      "Suspicious link detection"
+    ],
+    "severity": "High",
+    "source": "DBIR 2025 PDF",
+    "id": "dbir_social_engineering"
+  },
+  "external_threat_percentage": 0.24,
+  "data_breach_trends": [
+    {
+      "type": "Personal",
+      "frequency": 0.45,
+      "industries": [
+        "healthcare",
+        "financial",
+        "retail"
+      ]
+    },
+    {
+      "type": "Credentials",
+      "frequency": 0.38,
+      "industries": [
+        "all"
+      ]
+    },
+    {
+      "type": "Internal",
+      "frequency": 0.25,
+      "industries": [
+        "manufacturing",
+        "professional"
+      ]
+    }
+  ]
+}
+2025-07-19 03:24:29.151 | INFO     | __main__:test_rag_service:109 - === Testing RAG Service ===
+2025-07-19 03:24:38.085 | INFO     | src.services.rag_service:_load_dbir_patterns:66 - Loaded 7 patterns from cache
+2025-07-19 03:24:38.086 | INFO     | src.services.rag_service:_populate_collection:49 - Loading 7 real patterns from DBIR PDF
+2025-07-19 03:25:13.590 | INFO     | src.services.rag_service:_add_patterns_to_collection:125 - Added 7 patterns to ChromaDB collection
+2025-07-19 03:25:13.591 | INFO     | src.services.rag_service:_initialize_collection:40 - Created new security knowledge collection
+2025-07-19 03:25:13.594 | INFO     | __main__:test_rag_service:118 - RAG Collection stats: {
+  "total_patterns": 7,
+  "attack_vectors": {
+    "Web Application": 1,
+    "Network/System": 1,
+    "Human": 1,
+    "Various": 4
+  },
+  "severities": {
+    "High": 2,
+    "Critical": 1,
+    "Medium": 4
+  },
+  "collection_name": "security_knowledge"
+}
+2025-07-19 03:25:13.594 | INFO     | __main__:test_rag_service:121 - Testing attack pattern query...
+2025-07-19 03:25:13.857 | INFO     | src.services.rag_service:query_attack_patterns:271 - Found 5 relevant attack patterns for query
+2025-07-19 03:25:13.858 | INFO     | __main__:test_rag_service:126 - Found 5 relevant patterns for query: 'web application attacks SQL injection API security'
+2025-07-19 03:25:13.858 | INFO     | __main__:test_rag_service:128 - 1. Web Application Attacks (relevance: 0.43)
+2025-07-19 03:25:13.858 | INFO     | __main__:test_rag_service:128 - 2. Credential Attacks (relevance: -0.23)
+2025-07-19 03:25:13.858 | INFO     | __main__:test_rag_service:128 - 3. System Intrusion (relevance: -0.41)
+2025-07-19 03:25:13.859 | INFO     | __main__:test_rag_service:128 - 4. Social Engineering (relevance: -0.43)
+2025-07-19 03:25:13.859 | INFO     | __main__:test_rag_service:128 - 5. Cloud Security Incidents (relevance: -0.49)
+2025-07-19 03:25:13.859 | INFO     | __main__:test_rag_service:132 - Testing detection methods query...
+2025-07-19 03:25:14.126 | INFO     | __main__:test_rag_service:135 - Found 1 detection method recommendations
+2025-07-19 03:25:14.126 | INFO     | __main__:test_rag_service:137 - - Vector: Web Application
+2025-07-19 03:25:14.127 | INFO     | __main__:test_integration:147 - === Testing Integration ===
+2025-07-19 03:25:14.127 | INFO     | src.services.dbir_service:_load_dbir_data:24 - Processing real DBIR PDF: data/mitre-attack/2025-dbir-data-breach-investigations-report.pdf
+2025-07-19 03:25:17.808 | INFO     | src.services.pdf_processor:extract_all_text:34 - Extracted text from 117 pages
+2025-07-19 03:25:17.811 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 66.0% for web application
+2025-07-19 03:25:17.814 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 80.0% for system intrusion
+2025-07-19 03:25:17.817 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 96.0% for social engineering
+2025-07-19 03:25:17.830 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 42.0% for malware
+2025-07-19 03:25:17.832 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 44.0% for ransomware
+2025-07-19 03:25:17.833 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 30.0% for credential
+2025-07-19 03:25:17.850 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 43.0% for cloud
+2025-07-19 03:25:17.863 | INFO     | src.services.pdf_processor:extract_attack_patterns:72 - Extracted 7 attack patterns from DBIR PDF
+2025-07-19 03:25:17.865 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 86.0% for financial
+2025-07-19 03:25:17.891 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 19.0% for medical
+2025-07-19 03:25:17.921 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 34.0% for manufacturing
+2025-07-19 03:25:17.932 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 39.0% for government
+2025-07-19 03:25:17.943 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 16.0% for education
+2025-07-19 03:25:17.976 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 24.0% for external threats
+2025-07-19 03:25:17.979 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 73.0% for internal threats
+2025-07-19 03:25:17.979 | INFO     | src.services.dbir_service:_load_dbir_data:43 - Successfully loaded 7 real attack patterns from DBIR PDF
+2025-07-19 03:25:17.982 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 66.0% for web application
+2025-07-19 03:25:17.984 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 80.0% for system intrusion
+2025-07-19 03:25:17.987 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 96.0% for social engineering
+2025-07-19 03:25:18.000 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 42.0% for malware
+2025-07-19 03:25:18.002 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 44.0% for ransomware
+2025-07-19 03:25:18.003 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 30.0% for credential
+2025-07-19 03:25:18.019 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 43.0% for cloud
+2025-07-19 03:25:18.032 | INFO     | src.services.pdf_processor:extract_attack_patterns:72 - Extracted 7 attack patterns from DBIR PDF
+2025-07-19 03:25:18.034 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 86.0% for financial
+2025-07-19 03:25:18.058 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 19.0% for medical
+2025-07-19 03:25:18.088 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 34.0% for manufacturing
+2025-07-19 03:25:18.099 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 39.0% for government
+2025-07-19 03:25:18.110 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 16.0% for education
+2025-07-19 03:25:18.144 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 24.0% for external threats
+2025-07-19 03:25:18.146 | DEBUG    | src.services.pdf_processor:_find_frequency_in_text:256 - Found frequency 73.0% for internal threats
+2025-07-19 03:25:18.147 | INFO     | src.services.pdf_processor:save_extracted_data:341 - Saved extracted DBIR data to data/mitre-attack/dbir_extracted_data.json
+2025-07-19 03:25:19.968 | INFO     | src.services.rag_service:_initialize_collection:32 - Loaded existing security knowledge collection
+2025-07-19 03:25:19.968 | INFO     | __main__:test_integration:157 - Testing integrated workflow...
+2025-07-19 03:25:19.969 | INFO     | __main__:test_integration:165 - DBIR found 3 relevant threats
+2025-07-19 03:25:19.969 | INFO     | __main__:test_integration:170 - Finding patterns similar to: System Intrusion
+2025-07-19 03:25:20.218 | INFO     | src.services.rag_service:query_attack_patterns:271 - Found 3 relevant attack patterns for query
+2025-07-19 03:25:20.219 | INFO     | __main__:test_integration:173 - RAG found 3 similar patterns
+2025-07-19 03:25:20.219 | INFO     | __main__:test_integration:176 -   - System Intrusion (score: 0.27)
+2025-07-19 03:25:20.219 | INFO     | __main__:test_integration:176 -   - Malware (score: 0.05)
+2025-07-19 03:25:20.219 | INFO     | __main__:test_integration:176 -   - Credential Attacks (score: 0.01)
+2025-07-19 03:25:20.219 | INFO     | __main__:test_integration:170 - Finding patterns similar to: Web Application Attacks
+2025-07-19 03:25:20.494 | INFO     | src.services.rag_service:query_attack_patterns:271 - Found 3 relevant attack patterns for query
+2025-07-19 03:25:20.494 | INFO     | __main__:test_integration:173 - RAG found 3 similar patterns
+2025-07-19 03:25:20.494 | INFO     | __main__:test_integration:176 -   - Web Application Attacks (score: 0.61)
+2025-07-19 03:25:20.494 | INFO     | __main__:test_integration:176 -   - Credential Attacks (score: -0.04)
+2025-07-19 03:25:20.494 | INFO     | __main__:test_integration:176 -   - Social Engineering (score: -0.12)
+2025-07-19 03:25:20.495 | INFO     | __main__:main:196 - === Test Results ===
+2025-07-19 03:25:20.495 | INFO     | __main__:main:199 - pdf_processor: ✅ PASS
+2025-07-19 03:25:20.495 | INFO     | __main__:main:199 - dbir_service: ✅ PASS
+2025-07-19 03:25:20.495 | INFO     | __main__:main:199 - rag_service: ✅ PASS
+2025-07-19 03:25:20.495 | INFO     | __main__:main:199 - integration: ✅ PASS
+2025-07-19 03:25:20.496 | INFO     | __main__:main:204 - 🎉 All tests passed! RAG system is working with real DBIR data

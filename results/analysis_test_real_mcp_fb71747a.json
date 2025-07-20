@@ -1,0 +1,402 @@
+{
+  "session_id": "fb71747a-e971-4a8f-9ce2-2fa58e6fd993",
+  "scenario": "test_real_mcp",
+  "input": "Sistema com autenticação JWT e base PostgreSQL",
+  "result": {
+    "id": "69177099-b136-4370-b0b5-014e27aec2af",
+    "session_id": "fb71747a-e971-4a8f-9ce2-2fa58e6fd993",
+    "ecosystem_context": {
+      "description": "Sistema com autenticação JWT e base PostgreSQL",
+      "technologies": [
+        "JWT",
+        "PostgreSQL"
+      ],
+      "architecture_type": "monolith",
+      "security_controls": [
+        "JWT authentication"
+      ],
+      "data_sensitivity": "medium",
+      "compliance_requirements": []
+    },
+    "priority_detectors": [
+      {
+        "id": "28f4feef-7c7f-429f-9030-da49e9a39328",
+        "name": "Unusual Login Patterns",
+        "description": "Detect suspicious authentication attempts",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1078",
+            "name": "Valid Accounts",
+            "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credent",
+            "tactics": [
+              "defense-evasion",
+              "persistence",
+              "privilege-escalation",
+              "initial-access"
+            ],
+            "platforms": [
+              "windows",
+              "saas",
+              "iaas",
+              "linux",
+              "macos",
+              "containers",
+              "network devices",
+              "office suite",
+              "identity provider",
+              "esxi"
+            ]
+          },
+          {
+            "technique_id": "T1556",
+            "name": "Modify Authentication Process",
+            "description": "Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. The authentication process is handled by mechanisms, such as the Local Security Authentication Server (LSASS) process and the Security Accounts Manager (SAM) on Windows, pluggable authentication modules (PAM) on Unix-based systems, and authorization plugins on MacOS systems, responsible for gathering, storing, and validating credentials. By modifying an au",
+            "tactics": [
+              "credential-access",
+              "defense-evasion",
+              "persistence"
+            ],
+            "platforms": [
+              "windows",
+              "linux",
+              "macos",
+              "network devices",
+              "iaas",
+              "saas",
+              "office suite",
+              "identity provider"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Authentication attacks are common according to DBIR 2025"
+      },
+      {
+        "id": "4e318d9a-9603-4ab1-b06e-942c39060a30",
+        "name": "Data Exfiltration Detection",
+        "description": "Monitor for unusual data access patterns",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1048",
+            "name": "Exfiltration Over Alternative Protocol",
+            "description": "Adversaries may steal data by exfiltrating it over a different protocol than that of the existing command and control channel. The data may also be sent to an alternate network location from the main command and control server.  \n\nAlternate protocols include FTP, SMTP, HTTP/S, DNS, SMB, or any other network protocol not being used as the main command and control channel. Adversaries may also opt to encrypt and/or obfuscate these alternate channels. \n\n[Exfiltration Over Alternative Protocol](t",
+            "tactics": [
+              "exfiltration"
+            ],
+            "platforms": [
+              "linux",
+              "macos",
+              "windows",
+              "saas",
+              "iaas",
+              "network devices",
+              "office suite",
+              "esxi"
+            ]
+          },
+          {
+            "technique_id": "T1041",
+            "name": "Exfiltration Over C2 Channel",
+            "description": "Adversaries may steal data by exfiltrating it over an existing command and control channel. Stolen data is encoded into the normal communications channel using the same protocol as command and control communications.",
+            "tactics": [
+              "exfiltration"
+            ],
+            "platforms": [
+              "linux",
+              "macos",
+              "windows",
+              "esxi"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "critical",
+        "implementation_effort": "high",
+        "rationale": "Data breaches have high impact on business"
+      }
+    ],
+    "executive_summary": "Executive Summary\n\nThe security analysis of our application has identified critical risks that require immediate attention. The assessment, which covered our monolithic architecture utilizing JWT and PostgreSQL technologies, revealed an average risk score of 10 out of 10, indicating a high level of vulnerability.\n\nThe most significant security gap identified is the presence of unusual login patterns, which has been classified as the highest risk detector. This issue poses a severe threat to our system's integrity, as it could potentially lead to unauthorized access, data exfiltration, and privilege escalation. Additionally, the analysis uncovered vulnerabilities related to defense evasion, persistence, and initial access, further compounding the security concerns.\n\nTo mitigate these risks, it is imperative that we implement the recommended high-risk detectors within the next 2-4 weeks. Failure to address these critical vulnerabilities could result in severe consequences, including data breaches, regulatory non-compliance, and reputational damage, which could have a substantial impact on our business operations and financial performance.\n\nGiven the medium sensitivity of the data handled by our application and the potential compliance implications, we strongly recommend prioritizing the implementation of these security measures. Our security leadership and management teams should collaborate closely to ensure a timely and effective response, allocating the necessary resources and personnel to address these critical vulnerabilities promptly.",
+    "implementation_roadmap": [
+      {
+        "phase": 1,
+        "name": "Critical Security Controls",
+        "timeline": "4 weeks",
+        "priority": "critical",
+        "detectors": [
+          "28f4feef-7c7f-429f-9030-da49e9a39328",
+          "4e318d9a-9603-4ab1-b06e-942c39060a30"
+        ],
+        "detector_names": [
+          "Unusual Login Patterns",
+          "Data Exfiltration Detection"
+        ],
+        "estimated_effort": "80 horas",
+        "required_tools": [
+          "SIEM",
+          "Alerting System",
+          "DLP",
+          "Authentication Logs",
+          "Database Activity Monitoring",
+          "Identity Management",
+          "Log Management"
+        ],
+        "success_metrics": [
+          "Detecção ativa de ameaças críticas",
+          "Redução de 80% em falsos positivos",
+          "Tempo de resposta < 5 minutos"
+        ],
+        "budget_estimate": "R$ 50,000",
+        "key_milestones": [
+          "Configuração de logs e fontes de dados",
+          "Desenvolvimento de regras de detecção",
+          "Testes e ajuste fino",
+          "Deploy em produção"
+        ]
+      }
+    ],
+    "created_at": "2025-07-16T06:59:17.010012",
+    "actionable_items": [
+      {
+        "detector_id": "28f4feef-7c7f-429f-9030-da49e9a39328",
+        "detector_name": "Unusual Login Patterns",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify relevant log sources for authentication events",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "low",
+            "prerequisites": [
+              "Access to log sources",
+              "Knowledge of authentication systems"
+            ],
+            "deliverables": [
+              "List of log sources for authentication events"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define rules and thresholds for unusual login patterns",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Understanding of typical login patterns",
+              "Access to historical data"
+            ],
+            "deliverables": [
+              "Documented rules and thresholds for unusual login patterns"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Implement detection logic in SIEM or analytics platform",
+            "owner": "Security Engineering Team",
+            "timeline": "3 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to SIEM or analytics platform",
+              "Defined rules and thresholds"
+            ],
+            "deliverables": [
+              "Implemented detection logic for unusual login patterns"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Validate detection logic with historical data and test cases",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to historical data",
+              "Implemented detection logic"
+            ],
+            "deliverables": [
+              "Validated detection logic",
+              "Documented test cases and results"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Integrate detection alerts into incident response processes",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "low",
+            "prerequisites": [
+              "Validated detection logic",
+              "Established incident response processes"
+            ],
+            "deliverables": [
+              "Integrated detection alerts into incident response workflows"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Continuously monitor and tune detection logic",
+            "owner": "Security Analytics Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Implemented detection logic",
+              "Access to ongoing data"
+            ],
+            "deliverables": [
+              "Regularly reviewed and updated detection logic"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "4e318d9a-9603-4ab1-b06e-942c39060a30",
+        "detector_name": "Data Exfiltration Detection",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log collection from relevant sources",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to log sources",
+              "SIEM configuration"
+            ],
+            "deliverables": [
+              "Log ingestion configured",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define data exfiltration detection rules and patterns",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of data exfiltration techniques",
+              "Access to threat intelligence"
+            ],
+            "deliverables": [
+              "Detection rules and patterns documented"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Implement detection rules and patterns in SIEM or analytics platform",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Detection rules and patterns",
+              "Access to SIEM or analytics platform"
+            ],
+            "deliverables": [
+              "Detection rules and patterns implemented"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Validate and tune detection rules and patterns",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Detection rules and patterns implemented",
+              "Access to test data"
+            ],
+            "deliverables": [
+              "Detection rules and patterns validated and tuned"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Establish monitoring and response processes",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Detection rules and patterns validated",
+              "Incident response plan"
+            ],
+            "deliverables": [
+              "Monitoring and response processes documented"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Conduct periodic review and update of detection rules and patterns",
+            "owner": "Security Analytics Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Detection rules and patterns implemented",
+              "Access to threat intelligence"
+            ],
+            "deliverables": [
+              "Updated detection rules and patterns"
+            ]
+          }
+        ]
+      }
+    ],
+    "risk_analysis": {
+      "total_detectors": 2,
+      "risk_distribution": {
+        "high": 2,
+        "medium": 0,
+        "low": 0
+      },
+      "average_risk_score": 10.0,
+      "highest_risk_detector": "Unusual Login Patterns",
+      "top_mitre_tactics": [
+        {
+          "tactic": "defense-evasion",
+          "count": 2
+        },
+        {
+          "tactic": "persistence",
+          "count": 2
+        },
+        {
+          "tactic": "exfiltration",
+          "count": 2
+        },
+        {
+          "tactic": "privilege-escalation",
+          "count": 1
+        },
+        {
+          "tactic": "initial-access",
+          "count": 1
+        }
+      ],
+      "total_mitre_techniques": 4,
+      "recommendation": "ALTO: Detectores críticos identificados. Implemente detectores de alto risco nas próximas 2-4 semanas."
+    },
+    "metadata": {
+      "generated_at": "2025-07-16T06:59:17.010171",
+      "total_detectors": 2,
+      "high_priority_count": 2,
+      "average_risk_score": 10.0,
+      "estimated_implementation_time": "1 meses"
+    }
+  },
+  "additional_context": {},
+  "timestamp": "2025-01-01T00:00:00Z"
+}

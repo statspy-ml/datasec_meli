@@ -1,0 +1,1300 @@
+{
+  "session_id": "34198b0f-8c0d-4058-86bb-796769c56cae",
+  "scenario": "custom",
+  "input": "Sistema de pagamento online in Microservices",
+  "result": {
+    "id": "dd67fa47-0926-46d4-822a-b9f707d04764",
+    "session_id": "34198b0f-8c0d-4058-86bb-796769c56cae",
+    "ecosystem_context": {
+      "description": "Sistema de pagamento online in Microservices",
+      "technologies": [
+        "Microservices"
+      ],
+      "architecture_type": "microservices",
+      "security_controls": [],
+      "data_sensitivity": "medium",
+      "compliance_requirements": []
+    },
+    "priority_detectors": [
+      {
+        "id": "2962e1b1-defc-4e1f-b297-08c7175cc4e4",
+        "name": "API Gateway Monitoring",
+        "description": "Monitors API gateway logs for suspicious activity, API abuse, and unauthorized access attempts",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1600",
+            "name": "Weaken Encryption",
+            "description": "Adversaries may compromise a network device's encryption capability in order to bypass encryption that would otherwise protect data communications.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1497.001",
+            "name": "System Checks",
+            "description": "Adversaries may employ various system checks to detect and avoid virtualization and analysis environments. This may include changing behaviors based on the results of checks for the presence of artifacts indicative of a virtual machine environment (VME) or sandbox.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and preventing service-to-service attacks, API abuse, and unauthorized access to microservices"
+      },
+      {
+        "id": "c0ae7cfc-4073-47de-98f9-b9193fee70ef",
+        "name": "Service Mesh Monitoring",
+        "description": "Monitors service mesh traffic and communication patterns for anomalies and potential threats",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1218.011",
+            "name": "Rundll32",
+            "description": "Adversaries may abuse rundll32.exe to proxy execution of malicious code. Using rundll32.exe, vice executing directly (i.e. [Shared Modules](https://attack.mitre.org/techniques/T1129)), may avoid triggering security tools that may not monitor execution of the rundll32.exe process because of allowlists or false positives from normal operations. Rundll32.exe is commonly associated with executing DLL payloads (ex: <code>rundll32.exe {DLLname, DLLfunction}</code>).",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1027.009",
+            "name": "Embedded Payloads",
+            "description": "Adversaries may embed payloads within other files to conceal malicious content from defenses. Otherwise seemingly benign files (such as scripts and executables) may be abused to carry and obfuscate malicious payloads and content. In some cases, embedded payloads may also enable adversaries to [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553) by not impacting execution controls such as digital signatures and notarization tickets.(Citation: Sentinel Labs)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Essential for detecting service impersonation, network segmentation bypass, and other service-to-service attacks in microservices architecture"
+      },
+      {
+        "id": "f7ebe0f3-1cc6-4b8e-b5d8-31ee8280b317",
+        "name": "Authentication and Authorization Monitoring",
+        "description": "Monitors authentication and authorization logs for suspicious activity, brute-force attacks, and privilege escalation attempts",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1078",
+            "name": "Valid Accounts",
+            "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.",
+            "tactics": [
+              "initial-access",
+              "persistence",
+              "privilege-escalation",
+              "defense-evasion"
+            ],
+            "platforms": [
+              "linux",
+              "windows",
+              "mac"
+            ]
+          },
+          {
+            "technique_id": "T1110",
+            "name": "Brute Force",
+            "description": "Adversaries may use brute force techniques to attempt access to accounts using previously obtained credentials.",
+            "tactics": [
+              "initial-access",
+              "persistence"
+            ],
+            "platforms": [
+              "linux",
+              "windows",
+              "mac"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and preventing unauthorized access, identity theft, and privilege escalation attacks"
+      },
+      {
+        "id": "509c4b95-a62f-4bc7-9d71-4d0b74bdcd2f",
+        "name": "Database Activity Monitoring",
+        "description": "Monitors database activity logs for suspicious queries, data exfiltration attempts, and unauthorized access",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1218.011",
+            "name": "Rundll32",
+            "description": "Adversaries may abuse rundll32.exe to proxy execution of malicious code. Using rundll32.exe, vice executing directly (i.e. [Shared Modules](https://attack.mitre.org/techniques/T1129)), may avoid triggering security tools that may not monitor execution of the rundll32.exe process because of allowlists or false positives from normal operations. Rundll32.exe is commonly associated with executing DLL payloads (ex: <code>rundll32.exe {DLLname, DLLfunction}</code>).",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1027.009",
+            "name": "Embedded Payloads",
+            "description": "Adversaries may embed payloads within other files to conceal malicious content from defenses. Otherwise seemingly benign files (such as scripts and executables) may be abused to carry and obfuscate malicious payloads and content. In some cases, embedded payloads may also enable adversaries to [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553) by not impacting execution controls such as digital signatures and notarization tickets.(Citation: Sentinel Labs)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Essential for detecting and preventing data breaches, unauthorized data access, and database-related attacks"
+      },
+      {
+        "id": "c823b1a6-5e73-4710-a353-a3a63a2bd2ed",
+        "name": "Container Security Monitoring",
+        "description": "Monitors container activity, configurations, and runtime behavior for potential threats and misconfigurations",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1610",
+            "name": "Deploy Container",
+            "description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment. In Kubernetes environments, an adversary may attempt to deploy a ...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1525",
+            "name": "Implant Internal Image",
+            "description": "Adversaries may implant cloud or container images with malicious code to establish persistence after gaining access to an environment. Amazon Web Services (AWS) Amazon Machine Images (AMIs), Google Cloud Platform (GCP) Images, and Azure Images as well as popular container runtimes such as Docker can be implanted or backdoored. Unlike [Upload Malware](https://attack.mitre.org/techniques/T1608/001), this technique focuses on adversaries implanting an image in a registry within a victim’s environme...",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1565.003",
+            "name": "Runtime Data Manipulation",
+            "description": "Adversaries may modify systems in order to manipulate the data as it is accessed and displayed to an end user, thus threatening the integrity of the data.(Citation: FireEye APT38 Oct 2018)(Citation: DOJ Lazarus Sony 2018) By manipulating runtime data, adversaries may attempt to affect a business process, organizational understanding, and decision making.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "medium",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and preventing container-related threats, misconfigurations, and potential attacks in a microservices architecture"
+      },
+      {
+        "id": "e0245649-38a7-4dfa-a369-9454befb8513",
+        "name": "Network Traffic Analysis",
+        "description": "Analyzes network traffic patterns and flows for anomalies, suspicious activity, and potential threats",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1218.011",
+            "name": "Rundll32",
+            "description": "Adversaries may abuse rundll32.exe to proxy execution of malicious code. Using rundll32.exe, vice executing directly (i.e. [Shared Modules](https://attack.mitre.org/techniques/T1129)), may avoid triggering security tools that may not monitor execution of the rundll32.exe process because of allowlists or false positives from normal operations. Rundll32.exe is commonly associated with executing DLL payloads (ex: <code>rundll32.exe {DLLname, DLLfunction}</code>).",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1027.009",
+            "name": "Embedded Payloads",
+            "description": "Adversaries may embed payloads within other files to conceal malicious content from defenses. Otherwise seemingly benign files (such as scripts and executables) may be abused to carry and obfuscate malicious payloads and content. In some cases, embedded payloads may also enable adversaries to [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553) by not impacting execution controls such as digital signatures and notarization tickets.(Citation: Sentinel Labs)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Essential for detecting and preventing network-based attacks, lateral movement, and unauthorized network access"
+      },
+      {
+        "id": "daf879c7-ffd6-4a8b-96b5-907e1dac2cdb",
+        "name": "Payment Transaction Monitoring",
+        "description": "Monitors payment transactions for fraud, suspicious activity, and potential financial threats",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1218.011",
+            "name": "Rundll32",
+            "description": "Adversaries may abuse rundll32.exe to proxy execution of malicious code. Using rundll32.exe, vice executing directly (i.e. [Shared Modules](https://attack.mitre.org/techniques/T1129)), may avoid triggering security tools that may not monitor execution of the rundll32.exe process because of allowlists or false positives from normal operations. Rundll32.exe is commonly associated with executing DLL payloads (ex: <code>rundll32.exe {DLLname, DLLfunction}</code>).",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1027.009",
+            "name": "Embedded Payloads",
+            "description": "Adversaries may embed payloads within other files to conceal malicious content from defenses. Otherwise seemingly benign files (such as scripts and executables) may be abused to carry and obfuscate malicious payloads and content. In some cases, embedded payloads may also enable adversaries to [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553) by not impacting execution controls such as digital signatures and notarization tickets.(Citation: Sentinel Labs)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "critical",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and preventing financial fraud, unauthorized transactions, and payment-related attacks in an online payment system"
+      },
+      {
+        "id": "733b782b-ae91-4a15-90c4-5e65eccd00df",
+        "name": "Application Security Monitoring",
+        "description": "Monitors application logs, input validation, and runtime behavior for potential vulnerabilities and attacks",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1565.003",
+            "name": "Runtime Data Manipulation",
+            "description": "Adversaries may modify systems in order to manipulate the data as it is accessed and displayed to an end user, thus threatening the integrity of the data.(Citation: FireEye APT38 Oct 2018)(Citation: DOJ Lazarus Sony 2018) By manipulating runtime data, adversaries may attempt to affect a business process, organizational understanding, and decision making.",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1610",
+            "name": "Deploy Container",
+            "description": "Adversaries may deploy a container into an environment to facilitate execution or evade defenses. In some cases, adversaries may deploy a new container to execute processes associated with a particular image or deployment, such as processes that execute or download malware. In others, an adversary may deploy a new container configured without network rules, user limitations, etc. to bypass existing defenses within the environment. In Kubernetes environments, an adversary may attempt to deploy a ..",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1059.007",
+            "name": "JavaScript",
+            "description": "Adversaries may abuse various implementations of JavaScript for execution. JavaScript (JS) is a platform-independent scripting language (compiled just-in-time at runtime) commonly associated with scripts in webpages, though JS can be executed in runtime environments outside the browser.(Citation: NodeJS)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 10.0,
+        "impact_level": "high",
+        "implementation_effort": "medium",
+        "rationale": "Essential for detecting and preventing application-level attacks, code vulnerabilities, and potential exploits"
+      },
+      {
+        "id": "15e75e67-6dd4-48c5-bdab-c574d47705a8",
+        "name": "Cloud Infrastructure Monitoring",
+        "description": "Monitors cloud infrastructure components, configurations, and activity for potential threats and misconfigurations",
+        "priority": "high",
+        "mitre_techniques": [
+          {
+            "technique_id": "T1218.011",
+            "name": "Rundll32",
+            "description": "Adversaries may abuse rundll32.exe to proxy execution of malicious code. Using rundll32.exe, vice executing directly (i.e. [Shared Modules](https://attack.mitre.org/techniques/T1129)), may avoid triggering security tools that may not monitor execution of the rundll32.exe process because of allowlists or false positives from normal operations. Rundll32.exe is commonly associated with executing DLL payloads (ex: <code>rundll32.exe {DLLname, DLLfunction}</code>).",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          },
+          {
+            "technique_id": "T1027.009",
+            "name": "Embedded Payloads",
+            "description": "Adversaries may embed payloads within other files to conceal malicious content from defenses. Otherwise seemingly benign files (such as scripts and executables) may be abused to carry and obfuscate malicious payloads and content. In some cases, embedded payloads may also enable adversaries to [Subvert Trust Controls](https://attack.mitre.org/techniques/T1553) by not impacting execution controls such as digital signatures and notarization tickets.(Citation: Sentinel Labs)",
+            "tactics": [
+              "unknown"
+            ],
+            "platforms": [
+              "unknown"
+            ]
+          }
+        ],
+        "risk_score": 9.719999999999999,
+        "impact_level": "medium",
+        "implementation_effort": "medium",
+        "rationale": "Crucial for detecting and preventing cloud-related threats, misconfigurations, and potential attacks in a cloud-based microservices architecture"
+      }
+    ],
+    "executive_summary": "Executive Summary\n\nThe security analysis of our microservices architecture has identified multiple high-risk security gaps that require immediate attention. The assessment, which covered 9 detectors, revealed an average risk score of 9.97 out of 10, indicating a critical level of risk exposure.\n\nThe most significant security concern identified is the lack of proper monitoring and logging mechanisms for our API Gateway, which serves as the primary entry point for all external requests. This vulnerability could potentially allow unauthorized access, data breaches, and other malicious activities to go undetected, posing a severe threat to our systems and data.\n\nOther high-risk issues include inadequate authentication and authorization controls, insecure communication channels, and insufficient protection against common web application vulnerabilities such as injection attacks and cross-site scripting (XSS). These gaps could enable threat actors to gain unauthorized access, escalate privileges, and potentially compromise sensitive data.\n\nTo mitigate these risks, we recommend implementing a comprehensive security program that addresses the identified vulnerabilities. This should include deploying robust monitoring and logging solutions, implementing strong authentication and authorization mechanisms, encrypting all communication channels, and implementing web application firewalls and other security controls to protect against common vulnerabilities.\n\nFailure to address these critical security gaps could result in significant business impact, including data breaches, regulatory fines, reputational damage, and potential legal liabilities. Given the severity of the risks, we strongly recommend prioritizing the implementation of these security measures within the next 90 days to ensure the protection of our systems, data, and business operations.",
+    "implementation_roadmap": [
+      {
+        "phase": 1,
+        "name": "Critical Security Controls",
+        "timeline": "4 weeks",
+        "priority": "critical",
+        "detectors": [
+          "2962e1b1-defc-4e1f-b297-08c7175cc4e4",
+          "c0ae7cfc-4073-47de-98f9-b9193fee70ef",
+          "f7ebe0f3-1cc6-4b8e-b5d8-31ee8280b317",
+          "509c4b95-a62f-4bc7-9d71-4d0b74bdcd2f",
+          "c823b1a6-5e73-4710-a353-a3a63a2bd2ed"
+        ],
+        "detector_names": [
+          "API Gateway Monitoring",
+          "Service Mesh Monitoring",
+          "Authentication and Authorization Monitoring",
+          "Database Activity Monitoring",
+          "Container Security Monitoring"
+        ],
+        "estimated_effort": "200 horas",
+        "required_tools": [
+          "Rate Limiting",
+          "Authentication Logs",
+          "Database Activity Monitoring",
+          "DLP",
+          "Log Management",
+          "Alerting System",
+          "SIEM",
+          "API Gateway Logs",
+          "Identity Management"
+        ],
+        "success_metrics": [
+          "Detecção ativa de ameaças críticas",
+          "Redução de 80% em falsos positivos",
+          "Tempo de resposta < 5 minutos"
+        ],
+        "budget_estimate": "R$ 125,000",
+        "key_milestones": [
+          "Configuração de logs e fontes de dados",
+          "Desenvolvimento de regras de detecção",
+          "Testes e ajuste fino",
+          "Deploy em produção"
+        ]
+      },
+      {
+        "phase": 2,
+        "name": "Enhanced Monitoring",
+        "timeline": "8 weeks",
+        "priority": "high",
+        "detectors": [
+          "e0245649-38a7-4dfa-a369-9454befb8513",
+          "daf879c7-ffd6-4a8b-96b5-907e1dac2cdb",
+          "733b782b-ae91-4a15-90c4-5e65eccd00df",
+          "15e75e67-6dd4-48c5-bdab-c574d47705a8"
+        ],
+        "detector_names": [
+          "Network Traffic Analysis",
+          "Payment Transaction Monitoring",
+          "Application Security Monitoring",
+          "Cloud Infrastructure Monitoring"
+        ],
+        "estimated_effort": "120 horas",
+        "required_tools": [
+          "Network Monitoring",
+          "Log Management",
+          "Alerting System",
+          "SIEM",
+          "Firewall Logs"
+        ],
+        "success_metrics": [
+          "Cobertura de detecção expandida",
+          "Integração com SIEM estabelecida",
+          "Alertas automatizados funcionando"
+        ],
+        "budget_estimate": "R$ 80,000",
+        "dependencies": [
+          "Conclusão da Fase 1"
+        ]
+      }
+    ],
+    "created_at": "2025-07-20T06:56:57.773437",
+    "actionable_items": [
+      {
+        "detector_id": "2962e1b1-defc-4e1f-b297-08c7175cc4e4",
+        "detector_name": "API Gateway Monitoring",
+        "priority": "high",
+        "estimated_total_time": "10 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis",
+          "API Security",
+          "Rate Limiting"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log sources for API gateway logs",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to API gateway logs",
+              "Log management system"
+            ],
+            "deliverables": [
+              "Log ingestion configured",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define and implement rules for detecting suspicious API activity",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of API gateway logs",
+              "Threat intelligence"
+            ],
+            "deliverables": [
+              "Detection rules implemented",
+              "Testing and validation completed"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate API gateway monitoring with existing security monitoring tools",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to security monitoring tools",
+              "Integration documentation"
+            ],
+            "deliverables": [
+              "Integration completed",
+              "Monitoring dashboards updated"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Develop incident response procedures for API gateway security incidents",
+            "owner": "Incident Response Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of API gateway security risks",
+              "Existing incident response processes"
+            ],
+            "deliverables": [
+              "Incident response procedures documented",
+              "Training conducted"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Implement continuous monitoring and tuning of API gateway security controls",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Established monitoring processes",
+              "Feedback loop from security operations"
+            ],
+            "deliverables": [
+              "Continuous monitoring and tuning implemented",
+              "Regular reporting and review"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "c0ae7cfc-4073-47de-98f9-b9193fee70ef",
+        "detector_name": "Service Mesh Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log sources for service mesh components",
+            "owner": "DevOps Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to service mesh infrastructure",
+              "Logging infrastructure"
+            ],
+            "deliverables": [
+              "Log sources configured",
+              "Log ingestion pipeline established"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define and implement service mesh traffic monitoring rules",
+            "owner": "Security Engineering Team",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of service mesh architecture",
+              "Threat modeling"
+            ],
+            "deliverables": [
+              "Monitoring rules defined",
+              "Rules implemented in monitoring system"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate service mesh monitoring with SIEM and incident response workflows",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "SIEM infrastructure",
+              "Incident response processes"
+            ],
+            "deliverables": [
+              "SIEM integration completed",
+              "Incident response playbooks updated"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Conduct regular testing and validation of monitoring rules",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Test environment",
+              "Threat intelligence"
+            ],
+            "deliverables": [
+              "Testing schedule",
+              "Test results and recommendations"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Implement continuous monitoring and alerting for service mesh anomalies",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Monitoring infrastructure",
+              "Alerting mechanisms"
+            ],
+            "deliverables": [
+              "Monitoring dashboards",
+              "Alerting configurations"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Conduct regular security reviews and updates for service mesh monitoring",
+            "owner": "Security Engineering Team",
+            "timeline": "Quarterly",
+            "complexity": "medium",
+            "prerequisites": [
+              "Threat intelligence",
+              "Security best practices"
+            ],
+            "deliverables": [
+              "Security review reports",
+              "Monitoring rule updates"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "f7ebe0f3-1cc6-4b8e-b5d8-31ee8280b317",
+        "detector_name": "Authentication and Authorization Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Configure log collection from relevant sources",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to log sources",
+              "SIEM configuration"
+            ],
+            "deliverables": [
+              "Log ingestion configured",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define authentication and authorization log parsing rules",
+            "owner": "Security Analyst",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of log formats",
+              "Knowledge of authentication/authorization mechanisms"
+            ],
+            "deliverables": [
+              "Log parsing rules defined",
+              "Test cases developed"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Develop detection rules for suspicious activity",
+            "owner": "Security Analyst",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Knowledge of attack patterns",
+              "Understanding of normal user behavior"
+            ],
+            "deliverables": [
+              "Detection rules implemented",
+              "Tuning and testing completed"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement alerting and response procedures",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Incident response plan",
+              "Notification channels configured"
+            ],
+            "deliverables": [
+              "Alerting mechanisms configured",
+              "Response procedures documented"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct user awareness and training",
+            "owner": "Security Awareness Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Training materials",
+              "User communication channels"
+            ],
+            "deliverables": [
+              "User awareness campaigns executed",
+              "Training sessions delivered"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Establish monitoring and continuous improvement processes",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Monitoring tools",
+              "Feedback mechanisms"
+            ],
+            "deliverables": [
+              "Monitoring processes implemented",
+              "Continuous improvement cycle established"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "509c4b95-a62f-4bc7-9d71-4d0b74bdcd2f",
+        "detector_name": "Database Activity Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis",
+          "Database Security",
+          "SQL"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log sources for database activity monitoring",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to database servers",
+              "Logging enabled on databases"
+            ],
+            "deliverables": [
+              "Log sources configured",
+              "Log ingestion validated"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Define and implement detection rules for suspicious queries and data exfiltration attempts",
+            "owner": "Security Analytics Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of database activity logs",
+              "Knowledge of common attack patterns"
+            ],
+            "deliverables": [
+              "Detection rules implemented",
+              "Testing and validation completed"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate detection rules with SIEM or log management system",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to SIEM or log management system",
+              "Integration documentation"
+            ],
+            "deliverables": [
+              "Detection rules integrated",
+              "Alerting configured"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Develop incident response procedures for detected threats",
+            "owner": "Incident Response Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of database security",
+              "Collaboration with database administrators"
+            ],
+            "deliverables": [
+              "Incident response procedures documented",
+              "Training conducted"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Implement continuous monitoring and tuning of detection rules",
+            "owner": "Security Analytics Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Established detection rules",
+              "Access to log data"
+            ],
+            "deliverables": [
+              "Regular rule reviews",
+              "False positive reduction",
+              "Detection improvement"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Conduct periodic security assessments and penetration testing",
+            "owner": "Security Assessment Team",
+            "timeline": "Quarterly",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to database environments",
+              "Ethical hacking expertise"
+            ],
+            "deliverables": [
+              "Security assessment reports",
+              "Identified vulnerabilities",
+              "Remediation recommendations"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "c823b1a6-5e73-4710-a353-a3a63a2bd2ed",
+        "detector_name": "Container Security Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log sources for container activity",
+            "owner": "DevOps Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to container orchestration platform",
+              "Logging infrastructure"
+            ],
+            "deliverables": [
+              "Container logs ingested into centralized logging system"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Implement runtime monitoring for container configurations",
+            "owner": "Security Engineering Team",
+            "timeline": "3 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to container orchestration platform",
+              "Vulnerability scanning tools"
+            ],
+            "deliverables": [
+              "Continuous monitoring of container configurations",
+              "Alerting for misconfigurations"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Develop detection rules for container threats and anomalies",
+            "owner": "Security Operations Team",
+            "timeline": "4 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Understanding of MITRE ATT&CK techniques",
+              "Access to threat intelligence feeds"
+            ],
+            "deliverables": [
+              "Detection rules for container threats",
+              "Integration with SIEM"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement container image scanning and vulnerability management",
+            "owner": "DevSecOps Team",
+            "timeline": "3 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to container image registry",
+              "Vulnerability scanning tools"
+            ],
+            "deliverables": [
+              "Continuous scanning of container images",
+              "Remediation process for vulnerabilities"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Establish incident response procedures for container security incidents",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Incident response plan",
+              "Collaboration with DevOps and Development teams"
+            ],
+            "deliverables": [
+              "Container security incident response playbook",
+              "Training for incident response teams"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Conduct regular security assessments and penetration testing",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to container environments",
+              "Penetration testing tools"
+            ],
+            "deliverables": [
+              "Periodic security assessments",
+              "Remediation of identified vulnerabilities"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "e0245649-38a7-4dfa-a369-9454befb8513",
+        "detector_name": "Network Traffic Analysis",
+        "priority": "high",
+        "estimated_total_time": "10 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis",
+          "Network Security",
+          "Traffic Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure network traffic monitoring sources",
+            "owner": "Network Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to network devices",
+              "Network monitoring tools"
+            ],
+            "deliverables": [
+              "Network traffic monitoring configured",
+              "Data collection validated"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Develop and implement traffic analysis rules and algorithms",
+            "owner": "Security Analytics Team",
+            "timeline": "4 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Network traffic data",
+              "Threat intelligence feeds"
+            ],
+            "deliverables": [
+              "Traffic analysis rules",
+              "Anomaly detection algorithms"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Integrate traffic analysis with SIEM and incident response workflows",
+            "owner": "Security Operations Team",
+            "timeline": "3 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "SIEM platform",
+              "Incident response processes"
+            ],
+            "deliverables": [
+              "Traffic analysis alerts integrated",
+              "Incident response playbooks updated"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Conduct user awareness and training on network traffic monitoring",
+            "owner": "Security Awareness Team",
+            "timeline": "2 weeks",
+            "complexity": "low",
+            "prerequisites": [
+              "Training materials",
+              "User communication channels"
+            ],
+            "deliverables": [
+              "User awareness campaign",
+              "Training sessions delivered"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Establish monitoring and tuning processes for traffic analysis",
+            "owner": "Security Operations Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Traffic analysis rules",
+              "Incident response processes"
+            ],
+            "deliverables": [
+              "Monitoring and tuning procedures",
+              "Continuous improvement plan"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "daf879c7-ffd6-4a8b-96b5-907e1dac2cdb",
+        "detector_name": "Payment Transaction Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and integrate relevant data sources for payment transaction monitoring",
+            "owner": "Security Engineering Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to payment gateways",
+              "Integration with financial systems"
+            ],
+            "deliverables": [
+              "Data sources mapped",
+              "Data ingestion pipelines established"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Develop and implement rules and models for detecting fraudulent transactions",
+            "owner": "Data Science Team",
+            "timeline": "4 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Historical transaction data",
+              "Labeled fraud cases"
+            ],
+            "deliverables": [
+              "Fraud detection models",
+              "Rule-based detection logic"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Establish alerting and notification mechanisms for suspicious transactions",
+            "owner": "Security Operations Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Integration with SIEM",
+              "Incident response workflows"
+            ],
+            "deliverables": [
+              "Alert configurations",
+              "Notification channels"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement continuous monitoring and tuning of detection models",
+            "owner": "Data Science Team",
+            "timeline": "Ongoing",
+            "complexity": "high",
+            "prerequisites": [
+              "Feedback loop from incident response",
+              "Model performance metrics"
+            ],
+            "deliverables": [
+              "Model retraining process",
+              "Performance reports"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Conduct regular security assessments and penetration testing",
+            "owner": "Security Engineering Team",
+            "timeline": "Quarterly",
+            "complexity": "medium",
+            "prerequisites": [
+              "Ethical hacking expertise",
+              "Test environments"
+            ],
+            "deliverables": [
+              "Security assessment reports",
+              "Remediation plans"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Establish governance and compliance processes for payment transaction monitoring",
+            "owner": "Compliance Team",
+            "timeline": "2 weeks",
+            "complexity": "medium",
+            "prerequisites": [
+              "Regulatory requirements",
+              "Industry best practices"
+            ],
+            "deliverables": [
+              "Governance policies",
+              "Compliance reports"
+            ]
+          }
+        ]
+      },
+      {
+        "detector_id": "733b782b-ae91-4a15-90c4-5e65eccd00df",
+        "detector_name": "Application Security Monitoring",
+        "priority": "high",
+        "estimated_total_time": "12 semanas",
+        "required_skills": [
+          "Security Analysis",
+          "Log Analysis"
+        ],
+        "actions": [
+          {
+            "step": 1,
+            "description": "Identify and configure log collection from application servers, web servers, and other relevant sources",
+            "owner": "Security Engineering Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to log sources",
+              "SIEM configuration"
+            ],
+            "deliverables": [
+              "Log ingestion configured",
+              "Data validation completed"
+            ]
+          },
+          {
+            "step": 2,
+            "description": "Implement input validation rules and monitoring for common web application vulnerabilities (e.g., SQL injection, XSS, CSRF)",
+            "owner": "Application Development Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to application codebase",
+              "Security testing tools"
+            ],
+            "deliverables": [
+              "Input validation rules implemented",
+              "Vulnerability monitoring configured"
+            ]
+          },
+          {
+            "step": 3,
+            "description": "Configure runtime behavior monitoring for anomalies, such as unexpected data manipulation or unauthorized container deployments",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "Access to runtime monitoring tools",
+              "Baseline for normal behavior"
+            ],
+            "deliverables": [
+              "Runtime behavior monitoring configured",
+              "Alert rules defined"
+            ]
+          },
+          {
+            "step": 4,
+            "description": "Implement monitoring for JavaScript-based attacks, such as cross-site scripting (XSS) and client-side data manipulation",
+            "owner": "Application Development Team",
+            "timeline": "2 weeks",
+            "complexity": "high",
+            "prerequisites": [
+              "Access to application codebase",
+              "Security testing tools"
+            ],
+            "deliverables": [
+              "JavaScript security monitoring implemented",
+              "Vulnerability detection rules defined"
+            ]
+          },
+          {
+            "step": 5,
+            "description": "Integrate security monitoring data with SIEM and establish incident response procedures",
+            "owner": "Security Operations Team",
+            "timeline": "1 week",
+            "complexity": "medium",
+            "prerequisites": [
+              "SIEM configuration",
+              "Incident response plan"
+            ],
+            "deliverables": [
+              "Security monitoring data integrated with SIEM",
+              "Incident response procedures defined"
+            ]
+          },
+          {
+            "step": 6,
+            "description": "Conduct regular security testing and vulnerability assessments to validate the effectiveness of the monitoring solution",
+            "owner": "Security Engineering Team",
+            "timeline": "Ongoing",
+            "complexity": "medium",
+            "prerequisites": [
+              "Security testing tools",
+              "Access to application and infrastructure"
+            ],
+            "deliverables": [
+              "Security testing reports",
+              "Vulnerability remediation plans"
+            ]
+          }
+        ]
+      }
+    ],
+    "risk_analysis": {
+      "total_detectors": 9,
+      "risk_distribution": {
+        "high": 9,
+        "medium": 0,
+        "low": 0
+      },
+      "average_risk_score": 9.97,
+      "highest_risk_detector": "API Gateway Monitoring",
+      "top_mitre_tactics": [
+        {
+          "tactic": "unknown",
+          "count": 18
+        },
+        {
+          "tactic": "initial-access",
+          "count": 2
+        },
+        {
+          "tactic": "persistence",
+          "count": 2
+        },
+        {
+          "tactic": "privilege-escalation",
+          "count": 1
+        },
+        {
+          "tactic": "defense-evasion",
+          "count": 1
+        }
+      ],
+      "total_mitre_techniques": 20,
+      "recommendation": "CRÍTICO: Múltiplos detectores de alto risco identificados. Priorize implementação imediata dos detectores de maior score."
+    },
+    "metadata": {
+      "generated_at": "2025-07-20T06:56:57.773661",
+      "total_detectors": 9,
+      "high_priority_count": 9,
+      "average_risk_score": 9.97,
+      "estimated_implementation_time": "6 meses"
+    }
+  },
+  "additional_context": {
+    "architecture": "K8s django application",
+    "database": "postgresql with encrypted sensitive data",
+    "integrations": [
+      "stripe",
+      "paypal",
+      "banco_central"
+    ],
+    "security_features": [
+      "oauth2",
+      "fraud_detection",
+      "audit_logs"
+    ],
+    "compliance": [
+      "PCI-DSS",
+      "LGPD"
+    ],
+    "infrastructure": [
+      "api_gateway",
+      "load_balancer",
+      "redis_cache"
+    ]
+  },
+  "timestamp": "2025-01-01T00:00:00Z"
+}
