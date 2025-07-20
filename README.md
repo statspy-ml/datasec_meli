@@ -368,12 +368,12 @@ datasec-challenge/
 - Mapeamento para MITRE ATT&CK
 - Geração de relatórios com acionáveis
 - Sistema completo de logs e trazabilidade
-- MCPs para extensibilidade
+- MCPs (usando MCP da comunidade já regras permitem) para extensibilidade
 
 ### Pontos Bonus
 
 - API REST com FastAPI
-- Frontend web com Streamlit
+- Frontend web com Streamlit(muito simples já que não tive muito tempo para de)
 - Containerização com Docker
 - Múltiplos cenários de teste
 - Documentação completa
@@ -461,7 +461,7 @@ docker-compose up --build --force-recreate
 
 ### **Melhorias Planejadas**
 
-#### **Fase 1: Sistema Assíncrono (Prioridade ALTA - 4-6 semanas)**
+#### **Fase 1: Sistema Assíncrono (Prioridade ALTA)**
 
 **Implementação Celery + RabbitMQ**
 
@@ -490,7 +490,7 @@ GET /session/{id}/logs → Logs em tempo real
 - Progress API: WebSocket ou polling para status
 - Error Handling: Dead letter queues + retry logic
 
-#### **Fase 2: Otimização LLM (Prioridade ALTA - 3-4 semanas)**
+#### **Fase 2: Otimização LLM (Prioridade ALTA)**
 
 **Prompt Engineering Avançado**
 
@@ -514,7 +514,7 @@ ReportGeneratorAgent → GPT-4 (criatividade)
 - Partial results conforme agentes completam
 - User experience não-bloqueante
 
-#### **Fase 3: Modelos Locais (Prioridade MÉDIA - 6-8 semanas)**
+#### **Fase 3: Modelos Locais (Prioridade MÉDIA)**
 
 **Hybrid Local + Cloud Architecture**
 
@@ -539,7 +539,7 @@ edge: Llama 3.1 8B local (latência mínima)
 - Fallback automático: Local → Claude se modelo local falhar
 - Cost tracking: Local vs API usage
 
-#### **Fase 4: Inteligência Avançada (Prioridade MÉDIA - 4-6 semanas)**
+#### **Fase 4: Inteligência Avançada (Prioridade MÉDIA)**
 
 **RAG Enhancement**
 
