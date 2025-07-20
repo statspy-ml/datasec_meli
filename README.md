@@ -146,15 +146,15 @@ User Query → SentenceTransformers → Vector Search → Top-K Patterns → LLM
 
 ## Instalação e Execução
 
-### Opção 1: Início Inteligente Docker com guias  (Recomendado)
+### Opção 1: Início Inteligente Docker com guias  
 
 ```bash
 # 1. Clone o repositório
-git clone <repository-url>
-cd datasec-challenge
+git clone git@github.com:statspy-ml/datasec_meli.git
+cd datasec_meli
 
 # 2. Configure sua API key
-Adicione a API key .env
+Adicione a API ANTHROPIC_API_KEY no arquivo .env
 
 # Edite .env: ANTHROPIC_API_KEY=sk-ant-...
 
@@ -167,7 +167,7 @@ chmod +x start_docker.sh
 
 ```bash
 # 1. Configure .env com suas credenciais
-Edite o arquivo .env, adicionando chave API Anth
+Edite o arquivo .env, adicionando a chave API Anthropic
 
 # 2. Execute com Docker Compose
 docker-compose up --build
