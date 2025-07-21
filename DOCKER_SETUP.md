@@ -13,8 +13,8 @@ Crie um arquivo `.env` na raiz do projeto:
 
 ```bash
 # .env
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-DATABASE_URL=sqlite:///./datasec_challenge.db
+ANTHROPIC_API_KEY=
+DATABASE_URL=sqlite:///./datasec_challenge.d # Deprecado pois migrei para postgres
 LOG_LEVEL=INFO
 ```
 
@@ -39,11 +39,6 @@ Após o Docker iniciar:
 
 ### 5. Testar a integração
 
-#### Teste rápido da API
-
-```bash
-python test_api.py
-```
 
 #### Teste completo no frontend
 
@@ -85,5 +80,4 @@ docker-compose down -v
 - **streamlit-frontend**: Interface web Streamlit
 - **postgres**: Banco de dados PostgreSQL
 
-## Troubleshooting
 
